@@ -22,7 +22,7 @@ a {outline:0; border:0; text-decoration:none;}
   width:960px;
   min-height:100%;
   position:relative;
-  font-weight:100;
+  font-weight:300;
   font-family: 'Oxygen', sans-serif, arial;
 }
 #header {
@@ -62,6 +62,8 @@ a {outline:0; border:0; text-decoration:none;}
   display:inline-block;
   padding:0 20px;
   display:inline-block;
+  font-weight:700;
+  font-size:1.1em;
 }
 #rightNav li a#signUpLink {
   background:#5fc85f;
