@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>MyCardioApp</title>
+  <%= stylesheet_link_tag    "fonts" %>
   <%= stylesheet_link_tag    "application-all", :media => "all" %>
   <%= stylesheet_link_tag    "application-print", :media => "print" %>
   <%= javascript_include_tag "application" %>
@@ -11,7 +12,7 @@
 
   <div id="container">
     <div id="header">
-      <div id="logoWrapper"><%= image_tag('logo.png') %></div>
+      <div id="logoWrapper"><%= link_to image_tag('logo.png'), root_path %></div>
       <div id="mainNav">
         <ul id="rightNav">
           <li class="leftNavLink"><%= link_to "Sign-Up", '', id: 'signUpLink' %></li><!--
