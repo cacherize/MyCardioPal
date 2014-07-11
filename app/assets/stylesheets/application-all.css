@@ -49,6 +49,48 @@ src: font-url('/fonts/Oxygen-Bold.eot'),
 #header {
   padding-top:20px;
   position:relative;
+  width:100%;
+  height:62px;
+}
+#mainNav {
+  position:absolute;
+  right:0;
+  top:20px;
+  width:650px;
+  height:46px;
+  background:#ddd;
+  box-shadow:0 1.5px 0 #bbb;
+  border-radius:10px;
+  overflow:hidden;
+}
+#rightNav {
+  float:right;
+  padding:0;
+  margin:0;
+}
+#rightNav li {
+  display:inline-block;
+  height:46px;
+  line-height:46px;
+  font-size:0.8em;
+  font-weight:700;
+  text-shadow:0 -1.5px 0 #bbb;
+  text-align:center;
+  color:#fff;
+}
+#rightNav li a {
+  padding:0 20px;
+  text-align:center;
+  color:#fff;
+  display:inline-block;
+  border-left:1px solid #bbb;
+  border-right:1px solid #eee;
+}
+#rightNav li.leftNavLink a {
+  border-left:0;
+}
+#rightNav li.rightNavLink a {
+  border-right:0;
 }
 #logoWrapper {
   width:270px;
