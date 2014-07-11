@@ -25,6 +25,7 @@ a {outline:0; border:0; text-decoration:none;}
   position:relative;
   font-weight:300;
   font-family: 'Oxygen', sans-serif, arial;
+  color:#222;
 }
 #header {
   padding-top:20px;
