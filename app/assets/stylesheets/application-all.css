@@ -62,7 +62,6 @@ src: font-url('/fonts/Oxygen-Bold.eot'),
   background:#ddd;
   box-shadow:0 1.5px 0 #bbb;
   border-radius:10px;
-  overflow:hidden;
 }
 #rightNav {
   float:right;
@@ -84,18 +83,21 @@ src: font-url('/fonts/Oxygen-Bold.eot'),
   color:#fff;
   display:inline-block;
   padding:0 20px;
-  border-left:1px solid #bbb;
-  border-right:1px solid #efefef;
   display:inline-block;
 }
-#rightNav li.leftNavLink a {
-  border-left:0;
-}
-#rightNav li.rightNavLink a {
-  border-right:0;
-}
 #rightNav li a#signUpLink {
-  background:green;
+  background:#5fc85f;
+  text-shadow:0 -1px 0 #3e9a3e;
+  border-bottom:1.5px solid #5cb55c;
+  border-left:1px solid #ccc;
+  border-right:1px solid #ccc;
+  box-shadow:0 0 10px #4db84d inset;
+}
+#rightNav li a#signUpLink:hover {background:#70d770;}
+#rightNav li a#signUpLink:active {
+  position:relative;
+  top:1px;
+  border-bottom:0.5px solid #5cb55c;
 }
 #logoWrapper {
   width:270px;
