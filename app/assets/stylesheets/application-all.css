@@ -23,10 +23,15 @@ body, html {
   position:relative;
 }
 #header {
-  padding:10px;
+  padding-top:20px;
+  position:relative;
 }
-#content {
-  padding:10px 10px 80px 10px;
+#logoWrapper {
+  width:270px;
+  height:62px;
+}
+#body {
+  padding-bottom:80px;
 }
 #footer {
   width:100%;
