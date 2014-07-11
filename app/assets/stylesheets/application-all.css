@@ -38,7 +38,9 @@ a {outline:0; border:0; text-decoration:none;}
   width:650px;
   height:46px;
   background:#ddd;
-  box-shadow:0 1.5px 0 #bbb;
+  -moz-box-shadow:0 1.5px 0 #bbb, 0 2px 5px #bbbbbb;
+  -webkit-box-shadow:0 1.5px 0 #bbb, 0 2px 5px #bbbbbb;
+  box-shadow:0 1.5px 0 #bbb, 0 2px 5px #bbbbbb;
   border-radius:10px;
 }
 #rightNav {
@@ -71,6 +73,8 @@ a {outline:0; border:0; text-decoration:none;}
   border-bottom:1.5px solid #5cb55c;
   border-left:1px solid #ccc;
   border-right:1px solid #ccc;
+  -moz-box-shadow:0 0 10px #4db84d inset;
+  -webkit-box-shadow:0 0 10px #4db84d inset;
   box-shadow:0 0 10px #4db84d inset;
 }
 #rightNav li a#signUpLink:hover {background:#70d770;}
