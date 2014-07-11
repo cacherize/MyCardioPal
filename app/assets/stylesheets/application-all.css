@@ -16,7 +16,7 @@ body, html {
   margin:0;
   height:100%;
 }
-a {outline:0; border:0; text-decoration:0;}
+a {outline:0; border:0; text-decoration:none;}
 @font-face {
 font-family: 'Oxygen';
 font-style: normal;
@@ -83,20 +83,19 @@ src: font-url('/fonts/Oxygen-Bold.eot'),
   text-align:center;
   color:#fff;
   display:inline-block;
-}
-#rightNav li a span {
   padding:0 20px;
-  height:30px;
-  line-height:30px;
   border-left:1px solid #bbb;
   border-right:1px solid #efefef;
   display:inline-block;
 }
-#rightNav li.leftNavLink a span {
+#rightNav li.leftNavLink a {
   border-left:0;
 }
-#rightNav li.rightNavLink a span {
+#rightNav li.rightNavLink a {
   border-right:0;
+}
+#rightNav li a#signUpLink {
+  background:green;
 }
 #logoWrapper {
   width:270px;
