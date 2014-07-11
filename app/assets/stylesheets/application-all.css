@@ -14,19 +14,16 @@
 body, html {
   padding:0;
   margin:0;
-  background:gray;
   height:100%;
 }
 #container {
   margin:auto;
   width:960px;
   min-height:100%;
-  background:white;
   position:relative;
 }
 #header {
   padding:10px;
-  background:lightgray;
 }
 #content {
   padding:10px 10px 80px 10px;
@@ -37,5 +34,4 @@ body, html {
   position:absolute;
   bottom:0;
   left:0;
-  background:lightgray;
 }
