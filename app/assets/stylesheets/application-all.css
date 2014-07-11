@@ -16,11 +16,35 @@ body, html {
   margin:0;
   height:100%;
 }
+@font-face {
+font-family: 'Oxygen';
+font-style: normal;
+font-weight: 300;
+src: font-url('/fonts/Oxygen-Light.eot'),
+     font-url('/fonts/Oxygen-Light.woff') format('woff'),
+     font-url('/fonts/Oxygen-Light.ttf')  format('truetype');
+}
+@font-face {
+font-family: 'Oxygen';
+font-style: normal;
+font-weight: 500;
+src: font-url('/fonts/Oxygen-Regular.eot'),
+     font-url('/fonts/Oxygen-Regular.ttf')  format('truetype');
+}
+@font-face {
+font-family: 'Oxygen';
+font-style: normal;
+font-weight: 700;
+src: font-url('/fonts/Oxygen-Bold.eot'),
+     font-url('/fonts/Oxygen-Bold.woff') format('woff'),
+     font-url('/fonts/Oxygen-Bold.ttf')  format('truetype');
+}
 #container {
   margin:auto;
   width:960px;
   min-height:100%;
   position:relative;
+  font-family: 'Oxygen', sans-serif, arial;
 }
 #header {
   padding-top:20px;
