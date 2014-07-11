@@ -38,11 +38,7 @@ a {outline:0; border:0; text-decoration:none;}
   top:20px;
   width:650px;
   height:46px;
-  background:#ddd;
-  -moz-box-shadow:0 1.5px 0 #bbb, 0 2px 5px #bbbbbb;
-  -webkit-box-shadow:0 1.5px 0 #bbb, 0 2px 5px #bbbbbb;
-  box-shadow:0 1.5px 0 #bbb, 0 2px 5px #bbbbbb;
-  border-radius:10px;
+  background:none;
 }
 #rightNav {
   float:right;
@@ -55,9 +51,8 @@ a {outline:0; border:0; text-decoration:none;}
   line-height:46px;
   font-size:0.8em;
   font-weight:700;
-  text-shadow:0 -1.5px 0 #bbb;
   text-align:center;
-  color:#fff;
+  margin-left:5px;
 }
 #rightNav li a {
   text-align:center;
@@ -67,30 +62,48 @@ a {outline:0; border:0; text-decoration:none;}
   display:inline-block;
   font-weight:700;
   font-size:1.1em;
+  background:#ccc;
+  text-shadow:0 -1.5px 0 #aaa;
+  -moz-border-radius:3px;
+  -webkit-border-radius:3px;
+  border-radius:3px;
+  -moz-box-shadow:0 2px 0 #aaa, 0 0 10px #bbb inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 2px 0 #aaa, 0 0 10px #bbb inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 2px 0 #aaa, 0 0 10px #bbb inset, 0 2px 5px #d5d5d5;
 }
-#rightNav li a#signUpLink {
-  background:#5fc85f;
-  text-shadow:0 -1px 0 #3e9a3e;
-  border-bottom:1.5px solid #5cb55c;
-  border-left:1px solid #ccc;
-  border-right:1px solid #ccc;
-  -moz-box-shadow:0 0 10px #4db84d inset;
-  -webkit-box-shadow:0 0 10px #4db84d inset;
-  box-shadow:0 0 10px #4db84d inset;
+#rightNav li a:hover {
+  background:#ddd;
+  -moz-box-shadow:0 2px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 2px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 2px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
 }
-#rightNav li a#signUpLink:hover {background:#70d770;}
-#rightNav li a#signUpLink:active {
+#rightNav li a:active {
   position:relative;
   top:1px;
-  border-bottom:0.5px solid #5cb55c;
+  -moz-box-shadow:0 1px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 1px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 1px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
 }
-#logoWrapper {
-  width:270px;
-  height:62px;
+#rightNav li a#signUpLink {
+  background:#0000d4;
+  text-shadow:0 -1.5px 0 #000053;
+  -moz-box-shadow:0 2px 0 #000053, 0 0 10px #00009d inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 2px 0 #000053, 0 0 10px #00009d inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 2px 0 #000053, 0 0 10px #00009d inset, 0 2px 5px #d5d5d5;
 }
-#body {
-  padding-bottom:80px;
+#rightNav li a#signUpLink:hover {
+  background:#0000f1;
+  -moz-box-shadow:0 2px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 2px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 2px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
 }
+#rightNav li a#signUpLink:active {
+  -moz-box-shadow:0 1px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 1px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 1px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
+}
+#logoWrapper {width:270px; height:62px;}
+#body {padding-bottom:80px;}
 #footer {
   width:100%;
   height:80px;
