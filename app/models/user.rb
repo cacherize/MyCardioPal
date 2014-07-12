@@ -2,17 +2,18 @@ class User < ActiveRecord::Base
   attr_accessible :first, :last, :email, :username, :password, :password_confirmation, :gender, :private
   has_secure_password
 
-  validates :first, presence: {message: 'Name must be given'}
-  validates :last, presence: {message: 'Name must be given'}
-  validates :password, presence: {message: 'must be given'}, on: :create
-  validates :email, presence: {message: 'must be given'},
+  validates :first, presence: {message: 'Name is required'}
+  validates :last, presence: {message: 'Name is required'}
+  validates :gender, presence: {message: 'is required'}
+  validates :password, presence: {message: 'is required'}, on: :create
+  validates :email, presence: {message: 'is required'},
     uniqueness: {case_sensitive: false},
     format: {
       with: /^[-0-9a-z.+_]+@[-0-9a-z.+_]+\.[a-z]{2,4}$/i,
       if: lambda{self.username.present?}
     },
     on: :create
-  validates :username, presence: {message: 'must be given'},
+  validates :username, presence: {message: 'is required'},
     uniqueness: {case_sensitive: false}, 
     length: {minimum: 3, maximum: 30,
       too_long:  "is too long (max 30 chars)",
