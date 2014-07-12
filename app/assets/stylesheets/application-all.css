@@ -125,15 +125,16 @@ img {border:0;}
   background:#c7ffc6;
   border:1px solid #68c366;
   padding:10px 20px;
-  color:#222;
   border-radius:6px;
   font-weight:300;
   margin-top:8px;
   display:inline-block;
   min-width:200px;
   font-size:0.85em;
+  color:#68c366;
 }
 .alert {
   background:#ffc6c6;
   border-color:#e37e7e;
+  color:#e37e7e;
 }
