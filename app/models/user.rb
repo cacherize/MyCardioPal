@@ -19,5 +19,10 @@ class User < ActiveRecord::Base
       if: lambda{self.username.present?}
     }
 
-    after_validation { self.errors.messages.delete(:password_digest) }
+  after_validation { self.errors.messages.delete(:password_digest) }
+  before_save :downcase_email
+
+  def downcase_email
+    self.email.downcase! if self.email.present?
+  end
 end
