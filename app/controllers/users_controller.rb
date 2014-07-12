@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     respond_to do |format|
       if @user.save
-        format.html{redirect_to root_path, "Success! Please check your inbox for an account confirmation email. Confirm your account to login."}
+        format.html{redirect_to root_path, notice: "Success! Please check your inbox for an account confirmation email. Confirm your account to login."}
       else
         format.html{render :new}
       end
