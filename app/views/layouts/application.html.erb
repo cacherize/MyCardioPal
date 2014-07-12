@@ -13,9 +13,10 @@
   <div id="container">
     <div id="header">
       <div id="logoWrapper">
-        <div id="logo">
+        <%= link_to root_path, id: 'logo' do %>
           <span id="logoLeftSect">My</span><span id="logoMiddleSect">Cardio</span><span id="logoRightSect">Pal</span>
-        </div>
+        <% end %>
+      </div>
       <div id="mainNav">
         <ul id="rightNav">
           <li class="leftNavLink"><%= link_to "Sign-Up", '', id: 'signUpLink' %></li><!--

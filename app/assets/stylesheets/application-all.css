@@ -38,8 +38,8 @@ img {border:0;}
   position:absolute;
   right:0;
   top:20px;
-  width:670px;
-  height:42px;
+  width:700px;
+  height:46px;
   background:none;
   border-bottom:1px dashed #222;
 }
@@ -88,27 +88,29 @@ img {border:0;}
   box-shadow:0 1px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
 }
 #rightNav li a#signUpLink {
-  background:#0000d4;
-  text-shadow:0 -1.5px 0 #000053;
-  -moz-box-shadow:0 2px 0 #000053, 0 0 10px #00009d inset, 0 2px 5px #d5d5d5;
-  -webkit-box-shadow:0 2px 0 #000053, 0 0 10px #00009d inset, 0 2px 5px #d5d5d5;
-  box-shadow:0 2px 0 #000053, 0 0 10px #00009d inset, 0 2px 5px #d5d5d5;
+  background:#00b4db;
+  text-shadow:0 -1.5px 0 #007088;
+  -moz-box-shadow:0 2px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 2px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 2px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
 }
 #rightNav li a#signUpLink:hover {
-  background:#0000f1;
-  -moz-box-shadow:0 2px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
-  -webkit-box-shadow:0 2px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
-  box-shadow:0 2px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
+  background:#00c5ef;
+  -moz-box-shadow:0 2px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 2px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 2px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
 }
 #rightNav li a#signUpLink:active {
-  -moz-box-shadow:0 1px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
-  -webkit-box-shadow:0 1px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
-  box-shadow:0 1px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
+  -moz-box-shadow:0 1px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
+  -webkit-box-shadow:0 1px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
+  box-shadow:0 1px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
 }
 #logoWrapper {display:inline-block;}
-#logo {font-size:2.9em;}
+#logo {font-size:2.9em; display:inline-block; color:#222; text-shadow:0 2px 3px #bbb;}
 #logoRightSect, #logoLeftSect, #logoMiddleSect {letter-spacing:-1px; font-weight:300;}
 #logoRightSect {color:#00b4db;}
+#logo:hover #logoLeftSect, #logo:hover #logoMiddleSect {color:#444;}
+#logo:hover #logoRightSect {color:#00c5ef;}
 #body {padding-bottom:80px;}
 #footer {
   width:100%;
