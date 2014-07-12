@@ -9,6 +9,26 @@
   -webkit-box-shadow: 0 0 6px #ccc;
   box-shadow: 0 0 6px #ccc;
   width:400px;
+  .formErrors {
+    text-align:center;
+    .errorList {
+      padding:20px;
+      margin:0;
+      display:inline-block;
+      text-align:left;
+      font-weight:700;
+      background:#ff3131;
+      color:#fff;
+      -moz-border-radius:6px;
+      -webkit-border-radius:6px;
+      border-radius:6px;
+      li {
+        font-size:0.85em;
+        font-weight:300;
+        margin-left:15px;
+      }
+    }
+  }
   .formHeader {
     margin-top:0;
     font-weight:700;

@@ -1,5 +1,15 @@
 <%= form_for @user, html: {class: 'form'} do |f| %>
   <h1 class="formHeader">Sign-Up</h1>
+  <% if @user.errors.any? %>
+    <div class="formErrors">
+      <ul class="errorList">Form Errors:
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div><br/>
+  <% end %>
+
   <div class="formField">
     <%= f.label :first, "First Name" %>
     <div class="fieldWrapper"><%= f.text_field :first %></div>
