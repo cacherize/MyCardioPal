@@ -8,6 +8,7 @@
   -moz-box-shadow: 0 0 6px #ccc;
   -webkit-box-shadow: 0 0 6px #ccc;
   box-shadow: 0 0 6px #ccc;
+  width:400px;
   .formHeader {
     margin-top:0;
     font-weight:700;
@@ -27,10 +28,44 @@
     text-align:center;
     display:inline-block;
     margin-bottom:20px;
-    input[type='text'], input[type='password'], input[type='email'] {
+    width:320px;
+    font-size:1em;
+    .fieldWrapper {
       border:1px solid #ccc;
       background:none;
-      padding:10px;
+      text-align:center;
+      padding:0;
+      width:100%;
+      display:block;
+      overflow:hidden;
+      input[type='text'], input[type='password'], input[type='email'] {
+        padding:10px 0;
+        height:100%;
+        width:100%;
+        background:none;
+        border:0;
+        text-align:center;
+      }
+    }
+    .selectWrapper {
+      width:100%;
+      border-bottom:2px solid #ccc;
+      overflow:hidden;
+      position:relative;
+      -moz-border-radius:3px 3px 4px 4px;
+      -webkit-border-radius:3px 3px 4px 4px;
+      border-radius:3px 3px 5px 5px;
+      select {
+        outline:none;
+        background-color:#eee;
+        background-image:image-url('selectBG.png');
+        background-repeat:no-repeat;
+        border:0;
+        width:130%;
+        text-align:left;
+        width:120%;
+        padding:10px 0;
+      }
     }
     label {display:block; text-align:left; font-size:1.2em;}
   }
@@ -41,7 +76,7 @@
       color:#fff;
       padding:10px 15px;
       border:0;
-      outline:0;
+      outline:none;
       -moz-border-radius:3px;
       -webkit-border-radius:3px;
       border-radius:3px;
@@ -57,7 +92,7 @@
         box-shadow:0 2px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
       }
       &:active {
-        outline:0;
+        outline:none;
         position:relative;
         top:1px;
         -moz-box-shadow:0 1px 0 #aaa, 0 0 10px #cbcbcb inset, 0 2px 5px #d5d5d5;
@@ -66,4 +101,11 @@
       }
     }
   }
+}
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+input[type='submit']::-moz-focus-inner {
+  border: 0;
 }
