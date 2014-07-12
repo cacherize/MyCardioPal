@@ -1,5 +1,5 @@
 <%= form_tag sessions_path, class: 'form' do |f| %>
-  <h1 class="formHeader">Log In</h1>
+  <h1 class="formHeader">Sign In</h1>
   <div class="formField">
     <%= label_tag :login, "E-Mail/Username" %>
     <div class="fieldWrapper"><%= text_field_tag :login %></div>
@@ -11,6 +11,6 @@
   </div><br/>
 
   <div class="formSubmit">
-    <%= submit_tag 'Log In' %>
+    <%= submit_tag 'Login' %>
   </div>
 <% end %>
