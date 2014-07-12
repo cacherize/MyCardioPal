@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       if @user.save
         format.html{redirect_to root_path, "Success! Please check your inbox for an account confirmation email. Confirm your account to login."}
       else
-        format.html{render :create}
+        format.html{render :new}
       end
     end
   end
