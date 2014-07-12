@@ -27,6 +27,13 @@ class User < ActiveRecord::Base
 
   after_validation { self.errors.messages.delete(:password_digest) }
   before_save :downcase_email
+  before_create { generate_token(:auth_token) }
+
+  def generate_token(column)
+    begin
+      self[column]= SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end
 
   def downcase_email
     self.email.downcase! if self.email.present?
