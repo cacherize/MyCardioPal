@@ -38,9 +38,10 @@ img {border:0;}
   position:absolute;
   right:0;
   top:20px;
-  width:650px;
-  height:46px;
+  width:670px;
+  height:42px;
   background:none;
+  border-bottom:1px dashed #222;
 }
 #rightNav {
   float:right;
@@ -49,8 +50,8 @@ img {border:0;}
 }
 #rightNav li {
   display:inline-block;
-  height:46px;
-  line-height:46px;
+  height:35px;
+  line-height:35px;
   font-size:0.8em;
   font-weight:700;
   text-align:center;
@@ -104,7 +105,10 @@ img {border:0;}
   -webkit-box-shadow:0 1px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
   box-shadow:0 1px 0 #000053, 0 0 10px #0000ab inset, 0 2px 5px #d5d5d5;
 }
-#logoWrapper {width:270px; height:62px;}
+#logoWrapper {display:inline-block;}
+#logo {font-size:2.9em;}
+#logoRightSect, #logoLeftSect, #logoMiddleSect {letter-spacing:-1px; font-weight:300;}
+#logoRightSect {color:#00b4db;}
 #body {padding-bottom:80px;}
 #footer {
   width:100%;
