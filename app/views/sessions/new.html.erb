@@ -1,0 +1,16 @@
+<%= form_tag sessions_path, class: 'form' do |f| %>
+  <h1 class="formHeader">Log In</h1>
+  <div class="formField">
+    <%= label_tag :login, "E-Mail/Username" %>
+    <div class="fieldWrapper"><%= text_field_tag :login %></div>
+  </div><br/>
+
+  <div class="formField">
+    <%= label_tag :password, "Password" %>
+    <div class="fieldWrapper"><%= password_field_tag :password %></div>
+  </div><br/>
+
+  <div class="formSubmit">
+    <%= submit_tag 'Log In' %>
+  </div>
+<% end %>
