@@ -4,8 +4,14 @@ class User < ActiveRecord::Base
 
   validates :first, presence: {message: 'Name must be given'}
   validates :last, presence: {message: 'Name must be given'}
-  validates :email, presence: {message: 'must be given'}, uniqueness: {case_sensitive: false}, on: :create
   validates :password, presence: {message: 'must be given'}, on: :create
+  validates :email, presence: {message: 'must be given'},
+    uniqueness: {case_sensitive: false},
+    format: {
+      with: /^[-0-9a-z.+_]+@[-0-9a-z.+_]+\.[a-z]{2,4}$/i,
+      if: lambda{self.username.present?}
+    },
+    on: :create
   validates :username, presence: {message: 'must be given'},
     uniqueness: {case_sensitive: false}, 
     length: {minimum: 3, maximum: 30,
@@ -24,5 +30,13 @@ class User < ActiveRecord::Base
 
   def downcase_email
     self.email.downcase! if self.email.present?
+  end
+
+  def self.find_by_email_or_username(arg)
+    if arg.match(/^[-0-9a-z.+_]+@[-0-9a-z.+_]+\.[a-z]{2,4}$/i)
+      find_by_email(arg.downcase)
+    else
+      find(:first, :conditions => ["lower(username) = ?", arg.downcase])
+    end
   end
 end
