@@ -1,5 +1,5 @@
 <%= form_for @user, html: {class: 'form'} do |f| %>
-  <h1 class="formHeader">Sign-Up</h1>
+  <h1 class="formHeader">Sign Up For Free!</h1>
   <% if @user.errors.any? %>
     <div class="formErrors">
       <ul class="errorList">Form Errors:
@@ -46,7 +46,7 @@
   </div><br/>
 
   <div class="formSubmit">
-    <%= f.submit %>
+    <%= f.submit 'Create Account' %>
   </div>
 
 <% end %>

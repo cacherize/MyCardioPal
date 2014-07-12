@@ -34,15 +34,16 @@
     font-weight:700;
     position:absolute;
     background: #00b4db;
-    padding:15px 0;
+    padding:15px 18px;
     color:#fff;
     top:15px;
-    width:106%;
-    left:-3%;
+    width:100%;
+    left:-18px;
     text-shadow:0 -1.5px 0 #007088;
     -moz-box-shadow:0 0 8px #ccc;
     -webkit-box-shadow:0 0 8px #ccc;
     box-shadow:0 0 8px #ccc;
+    text-align:center;
   }
   .formField, .formSubmit {
     text-align:center;
