@@ -1,5 +1,5 @@
 MyCardioApp::Application.routes.draw do
-
+  match 'sign_up', to: 'users#new', via: :get
   resources :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
