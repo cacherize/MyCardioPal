@@ -17,7 +17,8 @@ body, html {
   margin:0;
   height:100%;
 }
-a {outline:0; border:0; text-decoration:none;}
+a {outline:0; border:0; text-decoration:none; color:#00b4db;}
+a:hover {color:#00ccf8;}
 img {border:0;}
 #container {
   margin:auto;
