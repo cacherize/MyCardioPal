@@ -9,8 +9,10 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(params[:user])
+    @user.invitation_sent_at = DateTime.now
     respond_to do |format|
       if @user.save
+        Messager.invitation(self).deliver
         format.html{redirect_to root_path, notice: "Success! Please check your inbox for an account confirmation email. Confirm your account to login."}
       else
         format.html{render :new}
