@@ -47,4 +47,13 @@ class User < ActiveRecord::Base
       find(:first, :conditions => ["lower(username) = ?", arg.downcase])
     end
   end
+
+  #***** Mailer Methods *****#
+
+  def send_password_reset
+    generate_token(:password_reset_token)
+    self.password_reset_sent_at = Time.zone.now
+    save!
+    Messager.reset_password(self).deliver
+  end
 end
