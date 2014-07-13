@@ -38,6 +38,9 @@ gem 'unicorn'
 
 # To use debugger
 # gem 'debugger'
+group :development do
+  gem "letter_opener"
+end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
