@@ -1,4 +1,5 @@
 MyCardioApp::Application.routes.draw do
+  match 'reset_password', to: 'password_resets#new', via: :get
   resources :password_resets, only: [:new, :create, :edit, :update]
   match 'login', to: 'sessions#new', via: :get
   match 'logout', to: 'sessions#destroy', via: :delete
