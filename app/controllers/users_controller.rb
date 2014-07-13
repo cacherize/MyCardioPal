@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user.invitation_sent_at = DateTime.now
     respond_to do |format|
       if @user.save
-        Messager.invitation(self).deliver
+        Messager.invitation(@user).deliver
         format.html{redirect_to root_path, notice: "Success! Please check your inbox for an account confirmation email. Confirm your account to login."}
       else
         format.html{render :new}
