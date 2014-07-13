@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_filter :authenticate, only: [:new, :create]
+  skip_filter :authenticate, only: [:new, :create, :confirm]
   def index
   end
 
@@ -31,5 +31,13 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def confirm
+    @user = User.find_by_auth_token!(params[:id])
+    @user.update_column(:activated, true)
+    respond_to do |format|
+      format.html{redirect_to(login_path, notice: 'Your account has been activated! You can now login!')}
+    end
   end
 end

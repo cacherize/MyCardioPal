@@ -7,7 +7,11 @@ MyCardioApp::Application.routes.draw do
   resources :sessions, only: [:destroy, :new, :create]
   match 'sign_up', to: 'users#new', via: :get
   match 'profile', to: 'users#show', via: :get
-  resources :users
+  resources :users do
+    member do
+      get 'confirm'
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

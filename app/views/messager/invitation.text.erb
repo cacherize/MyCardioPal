@@ -1,0 +1,8 @@
+Hi <%= @user.first.capitalize %>,
+
+You successfully signed up for an account at MyCardioPal.com!
+
+To login, you must first activate your account by following this confirmation link:
+<%= confirm_user_url(@user.auth_token) %>
+
+If your account isn't activated within 24 hours, it will be deleted and you'll have to sign up again.

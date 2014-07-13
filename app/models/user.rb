@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :first, :last, :email, :username, :password, :password_confirmation, :gender, :private
+  attr_accessible :first, :last, :email, :username, :password, :password_confirmation, :gender, :private, :activated
   has_secure_password
 
   validates :first, presence: {message: 'Name is required'}
