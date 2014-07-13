@@ -48,6 +48,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def name
+    "#{self.first} #{self.last}"
+  end
+
   #***** Mailer Methods *****#
 
   def send_password_reset
