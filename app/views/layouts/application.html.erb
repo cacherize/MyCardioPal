@@ -20,6 +20,7 @@
       <div id="mainNav">
         <ul id="rightNav">
           <% if current_user.present? %>
+            <li class="leftNavLink"><%= link_to "My Profile", profile_path %></li>
             <li class="rightNavLink"><%= link_to "Logout", logout_path, method: :delete %></li>
           <% else %>
             <li class="leftNavLink"><%= link_to "Sign-Up", sign_up_path, id: 'signUpLink' %></li><!--
