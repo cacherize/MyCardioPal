@@ -1,4 +1,7 @@
 MyCardioApp::Application.routes.draw do
+  match 'under_development', to: 'under_development#index', via: :get
+
+
   match 'reset_password', to: 'password_resets#new', via: :get
   match 'reset_password/:id/edit', to: 'password_resets#edit', via: :get, as: 'edit_password'
   resources :password_resets, only: [:new, :create, :edit, :update]
