@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MyCardioPal</title>
+  <%= stylesheet_link_tag    "application-all", :media => "all" %>
+  <%= stylesheet_link_tag    "application-print", :media => "print" %>
+  <%= javascript_include_tag "application" %>
+  <%= favicon_link_tag '/favicon.ico' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <div id="container">
+    <% if flash[:alert] -%>
+      <p class='alert'><%=h flash[:alert] %></p><br/>
+    <% end -%>
+    <% if flash[:notice] -%>
+      <p class='notice'><%=h flash[:notice] %></p><br/>
+    <% end -%>
+    <div id="body">
+      <%= yield %>
+    </div>
+  </div>
+
+</body>
+</html>
