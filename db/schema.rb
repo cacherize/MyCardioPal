@@ -17,9 +17,9 @@ ActiveRecord::Schema.define(:version => 20140715033024) do
     t.string   "name"
     t.integer  "met"
     t.string   "description", :limit => 1024
-    t.integer  "position"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.integer  "position",                    :default => 0
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
   create_table "users", :force => true do |t|

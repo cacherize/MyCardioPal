@@ -4,7 +4,7 @@ class CreateActivities < ActiveRecord::Migration
       t.string :name
       t.integer :met
       t.string :description, limit: 1024
-      t.integer :position
+      t.integer :position, default: 0
       t.timestamps
     end
   end
