@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-MyCardioApp::Application.load_tasks
+MyCardioPal::Application.load_tasks

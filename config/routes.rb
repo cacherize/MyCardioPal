@@ -1,4 +1,4 @@
-MyCardioApp::Application.routes.draw do
+MyCardioPal::Application.routes.draw do
   match 'under_development', to: 'under_development#index', via: :get
 
 
