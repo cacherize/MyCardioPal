@@ -44,7 +44,7 @@ img {border:0;}
   width:700px;
   height:46px;
   background:none;
-  border-bottom:1px dashed #222;
+  padding:5px 0 0 0;
 }
 #rightNav {
   float:right;
@@ -53,8 +53,8 @@ img {border:0;}
 }
 #rightNav li {
   display:inline-block;
-  height:35px;
-  line-height:35px;
+  height:38px;
+  line-height:38px;
   font-size:0.8em;
   font-weight:700;
   text-align:center;
@@ -109,7 +109,7 @@ img {border:0;}
   box-shadow:0 1px 0 #007088, 0 0 10px #008fae inset, 0 2px 5px #d5d5d5;
 }
 #logoWrapper {display:inline-block;}
-#logo {font-size:2.9em; display:inline-block; color:#222; text-shadow:0 2px 3px #bbb;}
+#logo {font-size:2.9em; display:inline-block; color:#222; text-shadow:0 2px 3px #bbb; height:58px; line-height:50px; vertical-align: text-top;}
 #logoRightSect, #logoLeftSect, #logoMiddleSect {letter-spacing:-1px; font-weight:300;}
 #logoRightSect {color:#00b4db;}
 #logo:hover #logoLeftSect, #logo:hover #logoMiddleSect {color:#444;}
