@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140712040516) do
+ActiveRecord::Schema.define(:version => 20140715033024) do
+
+  create_table "activities", :force => true do |t|
+    t.string   "name"
+    t.integer  "met"
+    t.string   "description", :limit => 1024
+    t.integer  "position"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first"
