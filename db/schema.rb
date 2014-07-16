@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140716005348) do
+ActiveRecord::Schema.define(:version => 20140716021908) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
-    t.integer  "met"
+    t.float    "met"
     t.string   "description", :limit => 1024
     t.integer  "position",                    :default => 0
     t.datetime "created_at",                                 :null => false
