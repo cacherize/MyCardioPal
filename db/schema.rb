@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(:version => 20140716005348) do
     t.integer  "activity_id"
     t.integer  "time"
     t.integer  "distance"
-    t.integer  "incline"
+    t.float    "incline"
     t.date     "date"
     t.string   "note",        :limit => 2048
     t.datetime "created_at",                  :null => false
