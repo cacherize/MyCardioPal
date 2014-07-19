@@ -1,5 +1,5 @@
 class Workout < ActiveRecord::Base
-  attr_accessible :user_id, :activity_id, :time, :date, :distance, :incline, :note
+  attr_accessible :user_id, :activity_id, :time, :date, :distance, :incline, :note, :distance_units, :weight, :weight_units
 
   def time=(values)
     hours = values[:hours].to_i * 3600
