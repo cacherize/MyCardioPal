@@ -2,7 +2,8 @@
   font-family: 'Oxygen';
   font-style: normal;
   font-weight: 300;
-  src: font-url('Oxygen-Light.eot'),
+  src: font-url('Oxygen-Light.eot');
+  src: font-url('Oxygen-Light.eot?#iefix') format('embedded-opentype'),
        font-url('Oxygen-Light.woff') format('woff'),
        font-url('Oxygen-Light.ttf')  format('truetype');
 }
@@ -10,14 +11,16 @@
   font-family: 'Oxygen';
   font-style: normal;
   font-weight: 500;
-  src: font-url('Oxygen-Regular.eot'),
+  src: font-url('Oxygen-Light.eot');
+  src: font-url('Oxygen-Regular.eot?#iefix') format('embedded-opentype'),
        font-url('Oxygen-Regular.ttf')  format('truetype');
 }
 @font-face {
   font-family: 'Oxygen';
   font-style: normal;
   font-weight: 700;
-  src: font-url('Oxygen-Bold.eot'),
+  src: font-url('Oxygen-Light.eot');
+  src: font-url('Oxygen-Bold.eot?#iefix') format('embedded-opentype'),
        font-url('Oxygen-Bold.woff') format('woff'),
        font-url('Oxygen-Bold.ttf')  format('truetype');
 }
