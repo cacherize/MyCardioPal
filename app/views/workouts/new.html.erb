@@ -40,6 +40,17 @@
   </div>
 
   <div class="formField">
+    <div class="weightsFormField">
+      <%= f.label :weight, "Weight" %>
+      <div class="fieldWrapper"><%= f.text_field :weight %></div>
+    </div>
+    <div class="unitsFormField">
+      <%= f.label :weight_units, "Units" %>
+      <div class="selectWrapper"><%= f.select :weight_units, [["Pounds", "lb"], ["Kilograms", "kg"]] %></div>
+    </div>
+  </div>
+
+  <div class="formField">
     <%= f.label :note %>
     <div class="textAreaWrapper"><%= f.text_area :note %></div>
   </div><br/>
