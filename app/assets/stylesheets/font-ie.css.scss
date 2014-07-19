@@ -1,5 +1,5 @@
 @font-face {
-  font-family: 'Oxygen';
+  font-family: 'OxygenLight';
   font-style: normal;
   font-weight: 300;
   src: font-url('Oxygen-Light.eot');
@@ -8,15 +8,7 @@
        font-url('Oxygen-Light.ttf')  format('truetype');
 }
 @font-face {
-  font-family: 'Oxygen';
-  font-style: normal;
-  font-weight: 500;
-  src: font-url('Oxygen-Regular.eot');
-  src: font-url('Oxygen-Regular.eot?#iefix') format('embedded-opentype'),
-       font-url('Oxygen-Regular.ttf')  format('truetype');
-}
-@font-face {
-  font-family: 'Oxygen';
+  font-family: 'OxygenBold';
   font-style: normal;
   font-weight: 700;
   src: font-url('Oxygen-Bold.eot');
@@ -24,3 +16,4 @@
        font-url('Oxygen-Bold.woff') format('woff'),
        font-url('Oxygen-Bold.ttf')  format('truetype');
 }
+#logoLeftSect, #logoMiddleSect, #logoRightSect {font-family: 'OxygenLight', sans-serif, arial !important;}
