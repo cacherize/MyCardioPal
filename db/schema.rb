@@ -48,10 +48,11 @@ ActiveRecord::Schema.define(:version => 20140719054842) do
     t.string   "unit"
     t.float    "incline"
     t.date     "date"
-    t.string   "note",        :limit => 2048
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.string   "note",         :limit => 2048
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
     t.integer  "weight"
+    t.string   "weight_units"
   end
 
 end
