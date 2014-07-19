@@ -138,13 +138,13 @@
     }
     label {display:block; text-align:left; font-size:1.2em;}
     .hoursFieldWrapper, .minutesFieldWrapper, .secondsFieldWrapper {
-      width:90px;
+      width:100px;
       display:inline-block;
       float:left;
       label {font-size:0.85em;}
     }
-    .minutesFieldWrapper {margin:0 25px;}
-    .weightsFormField, .distanceFormField {float:left; width:205px;}
+    .minutesFieldWrapper {margin:0 10px;}
+    .weightsFormField, .distanceFormField {float:left; width:210px;}
     .unitsFormField {
       float:right;
       width:100px;
