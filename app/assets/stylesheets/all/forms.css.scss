@@ -8,7 +8,7 @@
   -moz-box-shadow: 0 0 6px #ccc;
   -webkit-box-shadow: 0 0 6px #ccc;
   box-shadow: 0 0 6px #ccc;
-  width:400px;
+  min-width:400px;
   .formErrors {
     text-align:center;
     .errorList {
