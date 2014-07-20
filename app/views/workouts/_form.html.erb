@@ -1,0 +1,61 @@
+<%= form_for @workout, html: {class: 'form'} do |f| %>
+  <h1 class="formHeader"><%= @workout.new_record? ? "Add" : "Edit" %> Workout</h1>
+  <% if @workout.errors.any? %>
+    <div class="formErrors">
+      <ul class="errorList">Form Errors:
+        <% @workout.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div><br/>
+  <% end %>
+
+  <div class="formField">
+    <%= f.label :date, 'Date' %>
+    <div class="fieldWrapper"><%= f.text_field :date, value: date_field_value(@workout, params[:workout]) %></div>
+  </div><br/>
+
+  <div class="formField">
+    <%= f.label :time, 'Time' %>
+    <div class="hoursFieldWrapper">
+      <div class="fieldWrapper"><%= text_field_tag "workout[time][hours]", '' %></div> <%= label_tag 'workout[time][hours]', "Hours" %>
+    </div>
+    <div class="minutesFieldWrapper">
+      <div class="fieldWrapper"><%= text_field_tag "workout[time][minutes]", '' %></div> <%= label_tag 'workout[time][minutes]', "Minutes" %>
+    </div>
+    <div class="secondsFieldWrapper">
+      <div class="fieldWrapper"><%= text_field_tag "workout[time][seconds]", '' %></div> <%= label_tag 'workout[time][seconds]', "Seconds" %>
+    </div>
+  </div><br/>
+
+  <div class="formField">
+    <div class="distanceFormField">
+      <%= f.label :distance, "Distance" %>
+      <div class="fieldWrapper"><%= f.text_field :distance %></div>
+    </div>
+    <div class="unitsFormField">
+      <%= f.label :distance_units, "Units" %>
+      <div class="selectWrapper"><%= f.select :distance_units, [["Miles", "mi"], ["Feet", "ft"], ["Kilometers", "km"], ["Meters", "m"]] %></div>
+    </div>
+  </div><br/>
+
+  <div class="formField">
+    <div class="weightsFormField">
+      <%= f.label :weight, "Weight" %>
+      <div class="fieldWrapper"><%= f.text_field :weight %></div>
+    </div>
+    <div class="unitsFormField">
+      <%= f.label :weight_units, "Units" %>
+      <div class="selectWrapper"><%= f.select :weight_units, [["Pounds", "lb"], ["Kilograms", "kg"]] %></div>
+    </div>
+  </div><br/>
+
+  <div class="formField">
+    <%= f.label :note %>
+    <div class="textAreaWrapper"><%= f.text_area :note %></div>
+  </div><br/>
+
+  <div class="formSubmit">
+    <%= f.submit %>
+  </div>
+<% end %>
