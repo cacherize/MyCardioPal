@@ -2,7 +2,7 @@ class Workout < ActiveRecord::Base
   attr_accessible :user_id, :activity_id, :time, :date, :distance, :incline, :note, :distance_units, :weight, :weight_units
   validates :date, presence: {message: 'is required'}
   validates :time, presence: {message: 'is required'}, numericality: {greater_than: 59, message: 'must at least 1 minute'}
-  validate :date_class
+  validate :date_class, if: lambda{self.date.present?}
 
   def date_class
     errors.add(:date, 'must be a valid format (ex: mm-dd-yyyy or mm/dd/yyyy)') unless self.date.is_a? Date
@@ -16,6 +16,7 @@ class Workout < ActiveRecord::Base
   end
 
   def date=(value)
+    return if value.blank?
     value.gsub!(/[-\/]/, " ")
     begin
       date = Date.strptime(value, "%m %d %Y")
