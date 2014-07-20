@@ -25,4 +25,14 @@ class Workout < ActiveRecord::Base
     end
     self[:date] = date
   end
+
+  def weight=(args)
+    if args[:value].present? && args[:units].present?
+      weight = args[:value].to_f.round
+      weight = weight.kilograms.to.pounds.value.round if args[:units] == "kg"
+      self[:weight] = weight
+    else
+      self[:weight] = nil
+    end
+  end
 end
