@@ -12,7 +12,7 @@
 
   <div class="formField">
     <%= f.label :date, 'Date' %>
-    <div class="fieldWrapper"><%= f.text_field :date %></div>
+    <div class="fieldWrapper"><%= f.text_field :date, value: date_field_value(@workout, params[:workout]) %></div>
   </div><br/>
 
   <div class="formField">
