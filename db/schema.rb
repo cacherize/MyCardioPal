@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140720234357) do
+ActiveRecord::Schema.define(:version => 20140721021003) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
@@ -45,12 +45,11 @@ ActiveRecord::Schema.define(:version => 20140720234357) do
     t.integer  "activity_id"
     t.integer  "time"
     t.integer  "distance"
-    t.string   "distance_units"
     t.float    "incline"
     t.date     "date"
-    t.string   "note",           :limit => 2048
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.string   "note",        :limit => 2048
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "weight"
   end
 
