@@ -15,6 +15,7 @@ class Workout < ActiveRecord::Base
     errors.add(:date, 'must be a valid format (ex: mm-dd-yyyy or mm/dd/yyyy)') unless self.date.is_a? Date
   end
 
+  #***** Setter & Getter Methods *****#
   def time=(args)
     return if args.values.all?{|val| val.blank?}
     hours = args[:hours].to_i * 3600
@@ -52,6 +53,7 @@ class Workout < ActiveRecord::Base
     end
   end
 
+  #***** Model Methods *****#
   def default_distance_value
     return nil if self.new_record?
     user.imperial? ? distance_in_miles(self.distance) : distance_in_kilometers(self.distance)
