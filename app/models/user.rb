@@ -60,4 +60,13 @@ class User < ActiveRecord::Base
     save!
     Messager.reset_password(self).deliver
   end
+
+  #***** User Methods *****#
+  def imperial?
+    measurement_system == "imperial"
+  end
+
+  def metric?
+    measurement_system == "metric"
+  end
 end
