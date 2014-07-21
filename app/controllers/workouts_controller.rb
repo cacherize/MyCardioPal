@@ -1,10 +1,10 @@
 class WorkoutsController < ApplicationController
   def new
-    @workout = Workout.new
+    @workout = current_user.workouts.new
   end
 
   def create
-    @workout = Workout.new(params[:workout])
+    @workout = current_user.workouts.new(params[:workout])
 
     respond_to do |format|
       if @workout.save
