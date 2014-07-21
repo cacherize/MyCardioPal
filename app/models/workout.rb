@@ -3,6 +3,8 @@ class Workout < ActiveRecord::Base
 
   include UnitConversions
 
+  belongs_to :user
+
   #***** Validations *****#
   validates_presence_of [:date, :time, :weight], message: 'is required'
   validates :time, numericality: {greater_than: 59, message: 'must at least 1 minute'}, if: lambda{self.time.present?}
@@ -48,5 +50,15 @@ class Workout < ActiveRecord::Base
     else
       self[:distance] = nil
     end
+  end
+
+  def default_distance_value
+    return nil if self.new_record?
+    user.imperial? ? distance_in_miles(self.distance) : distance_in_kilometers(self.distance)
+  end
+
+  def default_weight_value
+    return nil if self.new_record?
+    user.imperial? ? self.weight : weight_in_kilograms(self.weight)
   end
 end

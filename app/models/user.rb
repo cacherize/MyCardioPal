@@ -69,4 +69,12 @@ class User < ActiveRecord::Base
   def metric?
     measurement_system == "metric"
   end
+
+  def default_distance_unit
+    imperial? ? "mi" : "km"
+  end
+
+  def default_mass_unit
+    imperial? ? "lb" : "kg"
+  end
 end

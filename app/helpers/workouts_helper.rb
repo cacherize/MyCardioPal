@@ -24,11 +24,7 @@ module WorkoutsHelper
     if params.present? && params[:weight].present?
       value = params[:weight][:units]
     else
-      if current_user.metric?
-        value = "kg" 
-      else
-        value = "lb"
-      end
+      current_user.default_mass_unit
     end
   end
 
@@ -36,11 +32,17 @@ module WorkoutsHelper
     if params.present? && params[:distance].present?
       value = params[:distance][:units]
     else
-      if current_user.metric?
-        value = "km" 
-      else
-        value = "mi"
-      end
+      current_user.default_distance_unit
     end
+  end
+
+  def weight_field_value(workout, params)
+    value = (params.present? ? params[:weight][:value] : workout.default_weight_value)
+    return value
+  end
+
+  def distance_field_value(workout, params)
+    value = (params.present? ? params[:distance][:value] : workout.default_distance_value)
+    return value
   end
 end

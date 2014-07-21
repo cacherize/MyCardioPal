@@ -13,4 +13,19 @@ module UnitConversions
       return v
     end
   end
+
+  def distance_in_miles(distance)
+    return 0 if distance.blank?
+    distance.feet.to.miles.value
+  end
+
+  def distance_in_kilometers(distance)
+    return 0 if distance.blank?
+    distance.feet.to.kilometers.value
+  end
+
+  def weight_in_kilograms(weight)
+    return 0 if weight.blank?
+    weight.pounds.to.kilograms.value
+  end
 end
