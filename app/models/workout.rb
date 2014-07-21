@@ -1,6 +1,8 @@
 class Workout < ActiveRecord::Base
   attr_accessible :user_id, :activity_id, :time, :date, :distance, :incline, :note, :distance_units, :weight, :weight_units
 
+  include UnitConversions
+
   #***** Validations *****#
   validates_presence_of [:date, :time, :weight], message: 'is required'
   validates :time, numericality: {greater_than: 59, message: 'must at least 1 minute'}, if: lambda{self.time.present?}
@@ -37,6 +39,14 @@ class Workout < ActiveRecord::Base
       self[:weight] = weight
     else
       self[:weight] = nil
+    end
+  end
+
+  def distance=(args)
+    if args[:value].present? && args[:units].present?
+      self[:distance] = convert_to_feet(args[:value], args[:units])
+    else
+      self[:distance] = nil
     end
   end
 end
