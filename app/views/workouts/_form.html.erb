@@ -35,7 +35,7 @@
     </div>
     <div class="unitsFormField">
       <%= label_tag "workout[distance][units]", "Units" %>
-      <div class="selectWrapper"><%= select_tag "workout[distance][units]", options_for_select([["Miles", "mi"], ["Feet", "ft"], ["Kilometers", "km"], ["Meters", "m"]]) %></div>
+      <div class="selectWrapper"><%= select_tag "workout[distance][units]", options_for_select([["Miles", "mi"], ["Feet", "ft"], ["Kilometers", "km"], ["Meters", "m"]], distance_units_field_value(params[:workout])) %></div>
     </div>
   </div><br/>
 
@@ -46,7 +46,7 @@
     </div>
     <div class="unitsFormField">
       <%= label_tag "workout[weight][units]", "Units" %>
-      <div class="selectWrapper"><%= select_tag "workout[weight][units]", options_for_select([["Pounds", "lb"], ["Kilograms", "kg"]]) %></div>
+      <div class="selectWrapper"><%= select_tag "workout[weight][units]", options_for_select([["Pounds", "lb"], ["Kilograms", "kg"]], weight_units_field_value(params[:workout])) %></div>
     </div>
   </div><br/>
 
