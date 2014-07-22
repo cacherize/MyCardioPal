@@ -7,8 +7,8 @@ class Workout < ActiveRecord::Base
 
   #***** Validations *****#
   validates_presence_of [:date, :time, :weight], message: 'is required'
-  validates :time, numericality: {greater_than: 59, message: 'must at least 1 minute'}, if: lambda{self.time.present?}
-  validates :weight, numericality: {greater_than: 1, message: "doesn't meet minimum allowed value"}, if: lambda{self.weight.present?}
+  validates :time, numericality: {greater_than: 59, message: 'must be at least 1 minute'}, if: lambda{self.time.present?}
+  validates :weight, numericality: {greater_than: 21, message: "doesn't meet minimum allowed value (10kg or 22lb)"}, if: lambda{self.weight.present?}
   validate :date_class, if: lambda{self.date.present?}
 
   def date_class
