@@ -45,4 +45,13 @@ module WorkoutsHelper
     value = (params.present? ? params[:distance][:value] : workout.default_distance_value)
     return value
   end
+
+  def time_field_value(workout, params, field)
+    if params.blank?
+      return nil if workout.new_record?
+      workout.time_value(field)
+    else
+      params[:time][field]
+    end
+  end
 end

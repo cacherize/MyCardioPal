@@ -54,6 +54,18 @@ class Workout < ActiveRecord::Base
   end
 
   #***** Model Methods *****#
+  def time_value(field)
+    time = Time.at(self.time).utc
+    if field == :hours
+      unit = "%H"
+    elsif field == :minutes
+      unit = "%M"
+    elsif field == :seconds
+      unit = "%S"
+    end
+    time.strftime(unit)
+  end
+
   def default_distance_value
     return nil if self.new_record?
     user.imperial? ? distance_in_miles(self.distance) : distance_in_kilometers(self.distance)
