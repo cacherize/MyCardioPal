@@ -18,13 +18,13 @@
   <div class="formField">
     <%= f.label :time, 'Time' %>
     <div class="hoursFieldWrapper">
-      <div class="fieldWrapper"><%= text_field_tag "workout[time][hours]", '' %></div> <%= label_tag 'workout[time][hours]', "Hours" %>
-    </div>
-    <div class="minutesFieldWrapper">
-      <div class="fieldWrapper"><%= text_field_tag "workout[time][minutes]", '' %></div> <%= label_tag 'workout[time][minutes]', "Minutes" %>
-    </div>
-    <div class="secondsFieldWrapper">
-      <div class="fieldWrapper"><%= text_field_tag "workout[time][seconds]", '' %></div> <%= label_tag 'workout[time][seconds]', "Seconds" %>
+      <div class="fieldWrapper"><%= text_field_tag "workout[time][hours]", '', placeholder: '00' %></div> <%= label_tag 'workout[time][hours]', "Hours" %>
+    </div><span class="timeSeparator">:</span><!--
+ --><div class="minutesFieldWrapper">
+      <div class="fieldWrapper"><%= text_field_tag "workout[time][minutes]", '', placeholder: '00' %></div> <%= label_tag 'workout[time][minutes]', "Minutes" %>
+    </div><span class="timeSeparator">:</span><!--
+ --><div class="secondsFieldWrapper">
+      <div class="fieldWrapper"><%= text_field_tag "workout[time][seconds]", '', placeholder: '00' %></div> <%= label_tag 'workout[time][seconds]', "Seconds" %>
     </div>
   </div><br/>
 
