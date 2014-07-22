@@ -17,7 +17,7 @@ class Workout < ActiveRecord::Base
 
   #***** Setter & Getter Methods *****#
   def time=(args)
-    return if args.values.all?{|val| val.blank?}
+    (self[:time] = nil) && return if args.values.all?{|val| val.blank?}
     hours = args[:hours].to_i * 3600
     minutes = args[:minutes].to_i * 60
     seconds = args[:seconds].to_i
