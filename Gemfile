@@ -48,3 +48,17 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
+
+group :test do
+  # DRb server for testing frameworks
+  gem 'spork'
+
+ # command line tool to easily handle events on file system modifications
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+
+ # run some required services using foreman start, more on this at the end of the article
+  gem "foreman"
+end
