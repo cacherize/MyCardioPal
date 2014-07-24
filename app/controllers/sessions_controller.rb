@@ -6,12 +6,11 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email_or_username(params[:login])
-    if user
+    if user && user.authenticate(params[:password])
       unless user.activated?
         flash.now.alert = "You must activate your account first. Please check your inbox for a confirmation email."
         render :new
       else
-        user.authenticate(params[:password])
         session[:auth_token] = user.auth_token
         flash[:notice] = "Success! Logged in!"
         redirect_back_or_default('/')
