@@ -12,5 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-textfill
+//= require fittext
 //= require_tree .
