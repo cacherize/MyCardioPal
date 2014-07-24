@@ -54,4 +54,17 @@ module WorkoutsHelper
       params[:time][field]
     end
   end
+
+  def display_time(seconds)
+    time = Time.at(seconds).utc
+    time_string = ""
+
+    if seconds > 3600
+      time_string += time.strftime("%-H<span class='splashUnit'>h</span>")
+    end
+
+    time_string += time.strftime("%M<span class='splashUnit'>m</span>%S<span class='splashUnit'>s</span>")
+
+    return time_string.html_safe
+  end
 end
