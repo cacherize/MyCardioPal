@@ -30,4 +30,8 @@ class WorkoutsController < ApplicationController
       end
     end
   end
+
+  def show
+    @workout = Workout.find(params[:id])
+  end
 end

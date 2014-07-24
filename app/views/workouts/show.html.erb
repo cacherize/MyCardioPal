@@ -1,0 +1,19 @@
+<div id="splashDate"><%= @workout.date.strftime("%B %e, %Y") %></div>
+<div class="splashBoxContainer">
+  <div class="splashResultBox" id="workoutWeight">
+    <div class="splashDesc">Weight</div>
+    <div class="splashResult"><%= @workout.weight %><span class="splashUnit">lb</span></div>
+  </div>
+  <div class="splashResultBox" id="workoutActivity">
+    <div class="splashDesc">Activity</div>
+    <div class="splashResult"></div>
+  </div>
+  <div class="splashResultBox" id="workoutTime">
+    <div class="splashDesc">Time</div>
+    <div class="splashResult"><%= display_time(@workout.time) %></div>
+  </div>
+</div>
+<div id="calorieBox">
+  <div id="calorieTitle">You Burned...</div>
+  <div id="calorieCount">348 <span id="calorieUnits">Calories</span></div>
+</div>
