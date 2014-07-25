@@ -1,5 +1,14 @@
 <%= form_for @activity, html: {class: 'form'} do |f| %>
   <h1 class="formHeader"><%= @activity.new_record? ? "Add" : "Edit" %> Activity</h1>
+  <% if @activity.errors.any? %>
+    <div class="formErrors">
+      <ul class="errorList">Form Errors:
+        <% @activity.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div><br/>
+  <% end %>
   <div class="formField">
     <%= f.label :name %>
     <div class="fieldWrapper"><%= f.text_field :name %></div>
@@ -9,7 +18,7 @@
     <div class="fieldWrapper"><%= f.text_field :short_name %></div>
   </div><br/>
   <div class="formField">
-    <%= f.label :met, 'MET Value' %>
+    <%= f.label :met %>
     <div class="fieldWrapper"><%= f.text_field :met %></div>
   </div><br/>
   <div class="formField">
