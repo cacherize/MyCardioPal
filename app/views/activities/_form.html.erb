@@ -1,0 +1,20 @@
+<%= form_for @activity, html: {class: 'form'} do |f| %>
+  <h1 class="formHeader"><%= @activity.new_record? ? "Add" : "Edit" %> Activity</h1>
+  <div class="formField">
+    <%= f.label :name %>
+    <div class="fieldWrapper"><%= f.text_field :name %></div>
+  </div><br/>
+  <div class="formField">
+    <%= f.label :short_name, 'Short Name' %>
+    <div class="fieldWrapper"><%= f.text_field :short_name %></div>
+  </div><br/>
+  <div class="formField">
+    <%= f.label :met, 'MET Value' %>
+    <div class="fieldWrapper"><%= f.text_field :met %></div>
+  </div><br/>
+  <div class="formField">
+    <%= f.label :description %>
+    <div class="textAreaWrapper"><%= f.text_area :description %></div>
+  </div><br/>
+  <div class="formSubmit"><%= f.submit %></div>
+<% end %>
