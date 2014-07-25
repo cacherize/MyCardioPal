@@ -1,5 +1,7 @@
 MyCardioPal::Application.routes.draw do
   match 'under_development', to: 'under_development#index', via: :get
+
+  get 'add_workout', to: 'workouts#new'
   resources :workouts
   resources :activities
   match 'reset_password', to: 'password_resets#new', via: :get
