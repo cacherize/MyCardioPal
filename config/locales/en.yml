@@ -7,3 +7,7 @@ en:
       workout:
         create: 'Add Workout'
         update: 'Update Workout'
+  activerecord:
+    attributes:
+      activity:
+        met: "MET"
