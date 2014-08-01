@@ -1,0 +1,2 @@
+class SupportTicketsController < ApplicationController
+end
