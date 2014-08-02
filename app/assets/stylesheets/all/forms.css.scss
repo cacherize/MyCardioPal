@@ -136,6 +136,12 @@
         background:none;
       }
     }
+    .radioButtonGroup {
+      display:inline-block;
+      text-align:left;
+      width:100%;
+      label {display:inline-block; font-size:0.85em;}
+    }
     label {display:block; text-align:left; font-size:1.2em;}
     .hoursFieldWrapper, .minutesFieldWrapper, .secondsFieldWrapper {
       width:100px;

@@ -1,0 +1,41 @@
+<%= form_for @support_ticket, html: {class: 'form'} do |f| %>
+  <h1 class="formHeader">Support Ticket</h1>
+  <div class="formField">
+    <%= f.label :fullname, 'Fullname' %>
+    <div class="fieldWrapper"><%= f.text_field :fullname %></div>
+  </div><br/>
+
+  <div class="formField">
+    <%= f.label :email, 'E-Mail' %>
+    <div class="fieldWrapper"><%= f.email_field :email %></div>
+  </div><br/>
+
+  <div class="formField">
+    <%= f.label :reason %>
+    <div class="radioButtonGroup">
+      <div id="reasonLeftCol">
+        <%= f.radio_button :reason, "bug" %>
+        <%= f.label :reason, "Report a Bug", value: 'bug' %><br/>
+        <%= f.radio_button :reason, "feature request" %>
+        <%= f.label :reason, "Feature Request", value: 'feature request' %><br/>
+        <%= f.radio_button :reason, "general comment" %>
+        <%= f.label :reason, "General Comment", value: 'general comment' %>
+      </div>
+      <div id="reasonRightCol">
+        <%= f.radio_button :reason, "trouble registration" %>
+        <%= f.label :reason, "Trouble Registering", value: 'trouble registration' %><br/>
+        <%= f.radio_button :reason, "other" %>
+        <%= f.label :reason, "Other", value: 'other' %>
+      </div>
+    </div>
+  </div><br/>
+
+  <div class="formField">
+    <%= f.label :message %>
+    <div class="textAreaWrapper"><%= f.text_area :message %></div>
+  </div><br/>
+
+  <div class="formSubmit">
+    <%= f.submit "Submit Ticket" %>
+  </div>
+<% end %>

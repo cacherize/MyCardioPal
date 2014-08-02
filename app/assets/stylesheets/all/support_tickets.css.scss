@@ -1,3 +1,5 @@
-// Place all the styles related to the support_tickets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#reasonLeftCol, #reasonRightCol {
+  width:50%;
+  float:left;
+  label, input[type='radio'] {margin: 8px 0 0 0; vertical-align: middle;}
+}
