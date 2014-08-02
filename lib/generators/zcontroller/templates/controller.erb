@@ -1,0 +1,40 @@
+class <%= file_name_singular.titleize.gsub(" ", "") %>Controller < ApplicationController
+  def index
+  end
+
+  def new
+    @<%= file_name_singular %> = <%= model_name %>.new
+  end
+
+  def create
+    @<%= file_name_singular %> = <%= model_name %>.new(params[:<%= file_name_singular %>])
+
+    respond_to do |format|
+      if @<%= file_name_singular %>.save
+        format.html{redirect_to @<%= file_name_singular %>}
+      else
+        format.html{render :new}
+      end
+    end
+  end
+
+  def show
+    @<%= file_name_singular %> = <%= model_name %>.find(params[:id])
+  end
+  
+  def edit
+    @<%= file_name_singular %> = <%= model_name %>.find(params[:id])
+  end
+
+  def update
+    @<%= file_name_singular %> = <%= model_name %>.find(params[:id])
+
+    respond_to do |format|
+      if @<%= file_name_singular %>.update_attributes(params[:<%= file_name_singular %>])
+        format.html{redirect_to @<%= file_name_singular %>}
+      else
+        format.html{render :edit}
+      end
+    end
+  end
+end
