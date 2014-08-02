@@ -1,6 +1,7 @@
 MyCardioPal::Application.routes.draw do
   match 'under_development', to: 'under_development#index', via: :get
 
+  resources :support_tickets, only: [:index, :new, :create]
   get 'add_workout', to: 'workouts#new'
   resources :workouts
   resources :activities
