@@ -1,8 +1,12 @@
 Description:
-    Explain the generator
+    Modified controller generator
 
 Example:
     rails generate controller Thing
 
     This will create:
-        what/will/it/create
+        - controller
+        - stylesheet (optional)
+        - javascript (optional)
+        - views (new and edit, optional)
+        - route
