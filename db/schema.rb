@@ -28,11 +28,12 @@ ActiveRecord::Schema.define(:version => 20140802003140) do
     t.string   "fullname"
     t.string   "email"
     t.string   "reason"
+    t.string   "other_reason"
     t.text     "message"
     t.boolean  "stickied"
     t.datetime "archived_at"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

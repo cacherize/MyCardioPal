@@ -5,6 +5,7 @@ class CreateSupportTickets < ActiveRecord::Migration
       t.string :fullname
       t.string :email
       t.string :reason
+      t.string :other_reason
       t.text :message
       t.boolean :stickied
       t.datetime :archived_at
