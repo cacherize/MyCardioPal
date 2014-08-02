@@ -1,6 +1,7 @@
-class <%= file_name_singular.titleize.gsub(" ", "") %>Controller < ApplicationController
+class <%= file_name_singular.titleize.gsub(" ", "").pluralize %>Controller < ApplicationController
   def index
   end
+  <%- if options.new? -%>
 
   def new
     @<%= file_name_singular %> = <%= model_name %>.new
@@ -21,7 +22,8 @@ class <%= file_name_singular.titleize.gsub(" ", "") %>Controller < ApplicationCo
   def show
     @<%= file_name_singular %> = <%= model_name %>.find(params[:id])
   end
-  
+  <%- if options.edit? -%>
+
   def edit
     @<%= file_name_singular %> = <%= model_name %>.find(params[:id])
   end
@@ -37,4 +39,6 @@ class <%= file_name_singular.titleize.gsub(" ", "") %>Controller < ApplicationCo
       end
     end
   end
+  <%- end -%>
+  <%- end -%>
 end
