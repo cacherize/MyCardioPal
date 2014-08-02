@@ -1,5 +1,12 @@
 #reasonLeftCol, #reasonRightCol {
   width:50%;
   float:left;
+  .field_with_errors {display:inline-block; label{color:#222;}}
   label, input[type='radio'] {margin: 8px 0 0 0; vertical-align: middle;}
+}
+#reasonRightCol {
+  #otherReasonField {
+    margin-top:4px;
+    #support_ticket_other_reason{padding:5px 0; font-size:0.8em;}
+  }
 }

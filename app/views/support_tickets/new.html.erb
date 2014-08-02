@@ -1,5 +1,14 @@
 <%= form_for @support_ticket, html: {class: 'form'} do |f| %>
   <h1 class="formHeader">Support Ticket</h1>
+  <% if @support_ticket.errors.any? %>
+    <div class="formErrors">
+      <ul class="errorList">Form Errors:
+        <% @support_ticket.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div><br/>
+  <% end %>
   <div class="formField">
     <%= f.label :full_name, 'Full Name' %>
     <div class="fieldWrapper"><%= f.text_field :full_name %></div>
@@ -26,6 +35,7 @@
         <%= f.label :reason, "Trouble Registering", value: 'trouble registration' %><br/>
         <%= f.radio_button :reason, "other" %>
         <%= f.label :reason, "Other", value: 'other' %>
+        <div class="fieldWrapper" id="otherReasonField"><%= f.text_field :other_reason %></div>
       </div>
     </div>
   </div><br/>
@@ -39,3 +49,4 @@
     <%= f.submit "Submit Ticket" %>
   </div>
 <% end %>
+<%= javascript_include_tag params[:controller] %>
