@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20140802003140) do
 
   create_table "support_tickets", :force => true do |t|
     t.integer  "user_id"
-    t.string   "fullname"
+    t.string   "full_name"
     t.string   "email"
     t.string   "reason"
     t.string   "other_reason"

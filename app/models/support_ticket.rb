@@ -1,3 +1,3 @@
 class SupportTicket < ActiveRecord::Base
-  attr_accessible :fullname, :email, :reason, :other_reason, :message, :stickied, :archive
+  attr_accessible :full_name, :email, :reason, :other_reason, :message, :stickied, :archive
 end
