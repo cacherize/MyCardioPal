@@ -4,4 +4,5 @@ class SupportTicket < ActiveRecord::Base
   validates :email, presence: true
   validates :reason, presence: true
   validates :message, presence: true, length: {minimum: 10, maximum: 1500, if: lambda{self.message.present?}}
+  validates :other_reason, presence: true, if: lambda{self.reason == "other"}
 end
