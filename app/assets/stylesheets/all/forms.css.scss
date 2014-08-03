@@ -9,26 +9,6 @@
   -webkit-box-shadow: 0 0 6px #ccc;
   box-shadow: 0 0 6px #ccc;
   min-width:400px;
-  .formErrors {
-    text-align:center;
-    .errorList {
-      padding:20px;
-      margin:0;
-      display:inline-block;
-      text-align:left;
-      font-weight:700;
-      background:#ff3131;
-      color:#fff;
-      -moz-border-radius:6px;
-      -webkit-border-radius:6px;
-      border-radius:6px;
-      li {
-        font-size:0.85em;
-        font-weight:300;
-        margin-left:15px;
-      }
-    }
-  }
   .formHeader {
     margin-top:0;
     font-weight:700;
@@ -206,7 +186,7 @@
   }
   .formField {
     width:400px;
-    margin:auto;
+    margin:auto auto 10px auto;
     input, textarea {width:100%; padding:8px 0; text-align:center; border:1px solid #ccc;}
     textarea {height:100px; resize:none; text-align:left; padding:0;}
   }
@@ -220,6 +200,27 @@
       color:#fff;
       font-weight:700;
       &:hover {background:#ddd;}
+    }
+  }
+  .field_with_errors {display:inline-block; width:400px;}
+}
+.formErrors {
+  text-align:center;
+  .errorList {
+    padding:20px;
+    margin:0;
+    display:inline-block;
+    text-align:left;
+    font-weight:700;
+    background:#ff3131;
+    color:#fff;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    li {
+      font-size:0.85em;
+      font-weight:300;
+      margin-left:15px;
     }
   }
 }
