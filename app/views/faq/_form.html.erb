@@ -18,5 +18,5 @@
     <%= f.text_area :answer %>
   </div>
   <%= f.hidden_field :position, value: Faq.maximum(:position) + 1 %>
-  <div class="formSubmit"><%= f.submit "Add FAQ" %></div>
+  <div class="formSubmit"><%= f.submit "Add FAQ" %> or <%= link_to 'Cancel', '', class: 'formClose' %></div>
 <% end %>

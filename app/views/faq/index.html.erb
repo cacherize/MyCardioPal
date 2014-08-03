@@ -1,5 +1,11 @@
 <div class="pageHeader">Frequently Asked Questions</div>
-<%= render 'form' %>
+<% if current_user && current_user.exec? %>
+  <span class="adminSection">
+    <%= link_to image_tag('icons/add.png')+ ' Add FAQ', '', class: "adminAddLink" %>
+    <%= render 'form' %>
+  </span>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
 <div id="faqLegend">
   <ul id="faqIndex">
     <% @grouped_faqs.each do |group| %>
