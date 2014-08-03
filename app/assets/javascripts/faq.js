@@ -57,6 +57,7 @@ function applyAdminActions() {
     axis: 'y',
     update: function(e, index) {
       update_list_index(index)
+      $("#faqPositionSubmit").show();
     }
   });
 }

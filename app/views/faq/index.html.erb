@@ -27,7 +27,7 @@
       <% @faqs.each do |faq| %>
         <%= hidden_field_tag "position[#{faq.id}]", faq.position, id: "faq_#{faq.id}_position" %>
       <% end %>
-      <%= submit_tag "Update Sort Order" %>
+      <%= submit_tag "Update Sort Order", id: 'faqPositionSubmit' %>
     <% end %>
   <% end %>
   <ul id="faqList">
