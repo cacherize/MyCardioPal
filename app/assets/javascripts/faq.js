@@ -1,12 +1,4 @@
 $(document).ready(function(){
-  if ($(".formErrors").length > 0) {
-    $(".adminForm").show();
-    $(".adminAddLink").hide();
-  } else {
-    $(".adminForm").hide();
-    $(".adminAddLink").show();
-  }
-
   if ($(".faqActions").length > 0) {
     applyAdminActions();
   }
@@ -26,6 +18,14 @@ $('.formClose').click(function(e){
 });
 
 function applyAdminActions() {
+  if ($("#newFaq .formErrors").length > 0) {
+    $(".adminForm").show();
+    $(".adminAddLink").hide();
+  } else {
+    $(".adminForm").hide();
+    $(".adminAddLink").show();
+  }
+
   $('#faqList dt').hover(function(){
     $(this).children('.faqActions').stop().slideDown(600);
   }, function(){

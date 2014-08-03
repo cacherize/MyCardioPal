@@ -1,4 +1,4 @@
-<%= form_for @new_faq, url: url_for(controller: 'faq', action: 'create'),  method: :post, html: {class: 'adminForm'} do |f| %>
+<%= form_for @new_faq, url: url_for(controller: 'faq', action: 'create'),  method: :post, html: {class: 'adminForm', id: 'newFaq'} do |f| %>
   <h1 class="formHeader">New FAQ</h1>
   <% if @new_faq.errors.any? %>
     <div class="formErrors">
