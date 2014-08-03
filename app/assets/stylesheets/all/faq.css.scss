@@ -1,6 +1,6 @@
 #faqLegend {
- border-top:1px solid #ccc;
- border-bottom:1px solid #ccc;
+ border-top:1px solid #999;
+ border-bottom:1px solid #999;
   #faqIndex {
     padding:0;
     .faqIndexCol {
@@ -9,7 +9,7 @@
       text-align:left;
       font-size:0.85em;
       .colWrapper {padding:0 5px 0 15px;}
-      li {margin:5px 0; color:#aaa;}
+      li {margin:5px 0; color:#999;}
       &:last-of-type {
         float:right;
         .colWrapper {padding-right:0;}
@@ -19,35 +19,50 @@
 }
 #faqList {
   text-align:left;
-  dd, dt {
-    position:relative;
-    padding-left:40px;
-    .faqSymbol {
-      position:absolute;
-      left:0;
-      top:0;
-      font-size:28px;
-      padding:4px;
-      border-right:1px solid #ccc;
-      width:24px;
+  padding:0;
+  li {
+    list-style-type:none;
+    margin:18px 0;
+    border:1px solid transparent;
+    .faqQuestion, .faqAnswer {
+      position:relative;
+      padding:4px 0 4px 32px;
+      .faqSymbol {
+        position:absolute;
+        left:0;
+        top:0;
+        font-size:28px;
+        padding:4px;
+        width:24px;
+        color:#999;
+      }
+      .faqContent {
+        margin:0;
+        padding:0 0 0 8px;
+        border-left:1px solid #999;
+        min-height:36px;
+        color:#999;
+      }
     }
-  }
-  dt {
-    font-size:28px;
-    padding:4px 0 4px 40px;
-    margin-bottom:4px;
+    .faqQuestion {
+      font-size:28px;
+      margin-bottom:4px;
+      .faqActions {
+        color:#999;
+        font-size:0.45em;
+        display:none;
+        padding:0 0 3px 9px;
+      }
+    }
+    .faqAnswer {margin:0; min-height:36px; padding-top:4px;}
     &:target {
       background: #fff194;
-      border:1px solid #ffe955;
-      .faqSymbol {border-right:0;}
-    }
-    .faqActions {
-      color:#ccc;
-      font-size:0.45em;
-      display:none;
-      padding-bottom:3px;
+      border-color:#ffe955;
+      .faqQuestion, .faqAnswer {
+        .faqSymbol, .faqContent {color:#555;}
+        .faqContent {border-left-color:#555;}
+      }
     }
   }
-  dd {margin:0 0 25px; min-height:36px; padding-top:4px;}
   .archivedFaq {opacity:0.3;}
 }

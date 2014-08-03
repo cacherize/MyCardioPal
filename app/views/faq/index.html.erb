@@ -20,19 +20,27 @@
     <br class="clear"/>
   </ul>
 </div>
-<dl id="faqList">
+<ul id="faqList">
   <% @faqs.each do |faq| %>
-    <dt id="faq_<%= faq.id %>" class="<%= 'archivedFaq' if faq.archived? %>">
-      <span class="faqSymbol">Q</span><%= faq.question %>
-      <% if current_user && current_user.admin? %>
-        <div class="faqActions">
-          <%= link_to 'Edit' %>
-          &#8226;
-          <%= link_to "#{faq.archived? ? 'Un' : 'A'}rchive", url_for(controller: 'faq', action: 'update', id: faq.id, faq: {archive: faq.archived? ? false : true}), method: :put, confirm: 'Are you sure?' %>
-        </div>
-      <% end %>
-    </dt>
-    <dd class="<%= 'archivedFaq' if faq.archived? %>"><span class="faqSymbol">A</span><%= faq.answer %></dd>
+    <li id="faq_<%= faq.id %>">
+      <div class="faqQuestion<%= ' archivedFaq' if faq.archived? %>">
+        <span class="faqSymbol">Q</span>
+        <p class="faqContent"><%= faq.question %></p>
+
+        <% if current_user && current_user.admin? %>
+          <div class="faqActions">
+            <%= link_to 'Edit' %>
+            &#8226;
+            <%= link_to "#{faq.archived? ? 'Un' : 'A'}rchive", url_for(controller: 'faq', action: 'update', id: faq.id, faq: {archive: faq.archived? ? false : true}), method: :put, confirm: 'Are you sure?' %>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="faqAnswer<%= ' archivedFaq' if faq.archived? %>">
+        <span class="faqSymbol">A</span>
+        <p class="faqContent"><%= faq.answer %></p>
+      </div>
+    </li>
   <% end %>
-</dl>
+</ul>
 <%= link_to 'Top of page', anchor: 'top' %>

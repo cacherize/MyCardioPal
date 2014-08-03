@@ -26,7 +26,7 @@ function applyAdminActions() {
     $(".adminAddLink").show();
   }
 
-  $('#faqList dt').hover(function(){
+  $('#faqList li .faqQuestion').hover(function(){
     $(this).children('.faqActions').stop().slideDown(600);
   }, function(){
     $(this).children('.faqActions').stop().slideUp(600);
