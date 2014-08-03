@@ -1,5 +1,14 @@
 <%= form_for @new_faq, url: url_for(controller: 'faq', action: 'create'),  method: :post, html: {class: 'adminForm'} do |f| %>
   <h1 class="formHeader">New FAQ</h1>
+  <% if @new_faq.errors.any? %>
+    <div class="formErrors">
+      <ul class="errorList">Form Errors:
+        <% @new_faq.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div><br/>
+  <% end %>
   <div class="formField">
     <%= f.label :question %><br/>
     <%= f.text_field :question %>
@@ -8,5 +17,6 @@
     <%= f.label :answer %><br/>
     <%= f.text_area :answer %>
   </div>
+  <%= f.hidden_field :position, value: Faq.maximum(:position) + 1 %>
   <div class="formSubmit"><%= f.submit "Add FAQ" %></div>
 <% end %>
