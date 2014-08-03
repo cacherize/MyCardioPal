@@ -41,4 +41,15 @@ function applyAdminActions() {
     });
     e.preventDefault();
   });
+
+  $('#faqList').on('click', '#faqSubmitBtn', function(){
+    var form = $(this).closest('form'),
+        questionValue = form.find("#faq_question").val(),
+        answerValue = form.find("#faq_answer").val();
+
+    if (questionValue == '' || answerValue == '') {
+      alert('Fill in all fields')
+      return false;
+    }
+  });
 }
