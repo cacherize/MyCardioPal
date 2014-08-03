@@ -5,6 +5,8 @@ class Faq < ActiveRecord::Base
   validates_presence_of :question, :answer
   validate :is_a_question
 
+  scope :unarchived, lambda{where('archived_at IS NULL')}
+
   def is_a_question
     if self.question.present?
       errors.add(:question, "must end in a question mark") unless self.question.last == "?"
@@ -13,5 +15,13 @@ class Faq < ActiveRecord::Base
 
   def archived?
     self.archived_at.present?
+  end
+
+  def self.by_user(user)
+    if user.present? && user.exec?
+      self.all
+    else
+      self.unarchived
+    end
   end
 end

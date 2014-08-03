@@ -1,6 +1,6 @@
 class FaqController < ApplicationController
   def index
-    @faqs = Faq.all
+    @faqs = Faq.by_user(current_user)
     @grouped_faqs = @faqs.in_groups(3, false)
     @new_faq = Faq.new
   end
@@ -12,7 +12,7 @@ class FaqController < ApplicationController
       if @new_faq.save
         format.html{redirect_to faq_index_path, notice: 'Success! Added FAQ!'}
       else
-        @faqs = Faq.all
+        @faqs = Faq.by_user(current_user)
         @grouped_faqs = @faqs.in_groups(3, false)
         format.html{render :index}
       end
