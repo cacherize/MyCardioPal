@@ -1,5 +1,5 @@
 MyCardioPal::Application.routes.draw do
-  resources :faq, only: [:index, :create :update]
+  resources :faq, only: [:index, :create, :update]
 
   resources :support_tickets, only: [:index, :new, :create]
   get 'add_workout', to: 'workouts#new'
