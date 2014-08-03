@@ -26,9 +26,19 @@ function applyAdminActions() {
     $(".adminAddLink").show();
   }
 
-  $('#faqList li .faqQuestion').hover(function(){
+  $('#faqList li').on('mouseenter', '.faqQuestion', function(){
     $(this).children('.faqActions').stop().slideDown(600);
-  }, function(){
+  });
+  $('#faqList li').on('mouseleave', '.faqQuestion', function(){
     $(this).children('.faqActions').stop().slideUp(600);
+  });
+
+  $("#faqList").on('click', ".faqEditLink, .faqCancelEditLink", function(e){
+    var el = $(this);
+
+    $.get(this.href, function(data){
+      el.closest('li').html(data);
+    });
+    e.preventDefault();
   });
 }
