@@ -1,4 +1,4 @@
-class <%= file_name_singular.titleize.gsub(" ", "").pluralize %>Controller < ApplicationController
+class <%= file_name_singular.titleize.gsub(" ", "") %>Controller < ApplicationController
   def index
   end
   <%- if options.new? -%>
