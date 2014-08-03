@@ -28,7 +28,7 @@
         <div class="faqActions">
           <%= link_to 'Edit' %>
           &#8226;
-          <%= link_to "#{faq.archived? ? 'Un' : 'A'}rchive", url_for(controller: 'faq', action: 'update', id: faq.id, faq: {archive: faq.archived? ? false : true}), method: :put %>
+          <%= link_to "#{faq.archived? ? 'Un' : 'A'}rchive", url_for(controller: 'faq', action: 'update', id: faq.id, faq: {archive: faq.archived? ? false : true}), method: :put, confirm: 'Are you sure?' %>
         </div>
       <% end %>
     </dt>
