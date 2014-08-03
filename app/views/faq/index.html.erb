@@ -20,11 +20,22 @@
     <br class="clear"/>
   </ul>
 </div>
-<ul id="faqList">
-  <% @faqs.each do |faq| %>
-    <li id="faq_<%= faq.id %>">
-      <%= render partial: 'faq_item', locals: {faq: faq} %>
-    </li>
+
+<% if @faqs.present? %>
+  <% if current_user && current_user.admin? %>
+    <%= form_tag update_order_faq_index_path, method: :put do %>
+      <% @faqs.each do |faq| %>
+        <%= hidden_field_tag "position[#{faq.id}]", faq.position, id: "faq_#{faq.id}_position" %>
+      <% end %>
+      <%= submit_tag "Update Sort Order" %>
+    <% end %>
   <% end %>
-</ul>
+  <ul id="faqList">
+    <% @faqs.each do |faq| %>
+      <li id="faq_<%= faq.id %>">
+        <%= render partial: 'faq_item', locals: {faq: faq} %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 <%= link_to 'Top of page', anchor: 'top' %>

@@ -52,4 +52,18 @@ function applyAdminActions() {
       return false;
     }
   });
+
+  $("#faqList").sortable({
+    axis: 'y',
+    update: function(e, index) {
+      update_list_index(index)
+    }
+  });
+}
+
+function update_list_index(index) {
+  $("#faqList li").each(function(index){
+    var id = this.id
+    $('#'+id+'_position').val(index);
+  });
 }
