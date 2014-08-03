@@ -6,6 +6,10 @@ $(document).ready(function(){
     $(".adminForm").hide();
     $(".adminAddLink").show();
   }
+
+  if ($(".faqActions").length > 0) {
+    applyAdminActions();
+  }
 });
 
 $(".adminAddLink").click(function(e){
@@ -20,3 +24,11 @@ $('.formClose').click(function(e){
   });
   e.preventDefault();
 });
+
+function applyAdminActions() {
+  $('#faqList dt').hover(function(){
+    $(this).children('.faqActions').stop().slideDown(600);
+  }, function(){
+    $(this).children('.faqActions').stop().slideUp(600);
+  });
+}

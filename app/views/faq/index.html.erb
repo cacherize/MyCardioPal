@@ -22,7 +22,16 @@
 </div>
 <dl id="faqList">
   <% @faqs.each do |faq| %>
-    <dt id="faq_<%= faq.id %>" class="<%= 'archivedFaq' if faq.archived? %>"><span class="faqSymbol">Q</span><%= faq.question %></dt>
+    <dt id="faq_<%= faq.id %>" class="<%= 'archivedFaq' if faq.archived? %>">
+      <span class="faqSymbol">Q</span><%= faq.question %>
+      <% if current_user && current_user.admin? %>
+        <div class="faqActions">
+          <%= link_to 'Edit' %>
+          &#8226;
+          <%= link_to "#{faq.archived? ? 'Un' : 'A'}rchive", url_for(controller: 'faq', action: 'update', id: faq.id, faq: {archive: faq.archived? ? false : true}), method: :put %>
+        </div>
+      <% end %>
+    </dt>
     <dd class="<%= 'archivedFaq' if faq.archived? %>"><span class="faqSymbol">A</span><%= faq.answer %></dd>
   <% end %>
 </dl>

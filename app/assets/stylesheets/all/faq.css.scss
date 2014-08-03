@@ -41,6 +41,12 @@
       border:1px solid #ffe955;
       .faqSymbol {border-right:0;}
     }
+    .faqActions {
+      color:#ccc;
+      font-size:0.45em;
+      display:none;
+      padding-bottom:3px;
+    }
   }
   dd {margin:0 0 25px; min-height:36px; padding-top:4px;}
   .archivedFaq {opacity:0.3;}
