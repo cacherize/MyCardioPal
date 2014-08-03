@@ -74,7 +74,7 @@
       right:10px;
       top:10px;
     }
-    .desc {display:inline-block; float:right;}
+    .desc {display:inline-block; float:left;}
   }
   .formField, .formSubmit {
     text-align:center;
@@ -135,6 +135,12 @@
         border:0;
         background:none;
       }
+    }
+    .radioButtonGroup {
+      display:inline-block;
+      text-align:left;
+      width:100%;
+      label {display:inline-block; font-size:0.85em;}
     }
     label {display:block; text-align:left; font-size:1.2em;}
     .hoursFieldWrapper, .minutesFieldWrapper, .secondsFieldWrapper {

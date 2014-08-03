@@ -11,3 +11,6 @@ en:
     attributes:
       activity:
         met: "MET"
+    errors:
+      messages:
+        blank: 'is required'
