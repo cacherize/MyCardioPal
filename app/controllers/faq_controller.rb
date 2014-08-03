@@ -1,4 +1,6 @@
 class FaqController < ApplicationController
+  skip_filter :authenticate, only: :index
+
   def index
     @faqs = Faq.by_user(current_user)
     @grouped_faqs = @faqs.in_groups(3, false)
