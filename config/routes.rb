@@ -1,5 +1,5 @@
 MyCardioPal::Application.routes.draw do
-  match 'under_development', to: 'under_development#index', via: :get
+  resources :faq, only: [:index, :new, :create, :edit, :update]
 
   resources :support_tickets, only: [:index, :new, :create]
   get 'add_workout', to: 'workouts#new'
@@ -69,6 +69,7 @@ MyCardioPal::Application.routes.draw do
   # just remember to delete public/index.html.
   root :to => 'home#index'
 
+  match 'under_development', to: 'under_development#index', via: :get
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
