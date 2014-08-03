@@ -1,6 +1,6 @@
 #faqLegend {
- border-top:1px solid #777;
- border-bottom:1px solid #777;
+ border-top:1px dashed #777;
+ border-bottom:1px dashed #777;
   #faqIndex {
     padding:0;
     .faqIndexCol {
@@ -39,7 +39,7 @@
       .faqContent {
         margin:0;
         padding:0 8px;
-        border-left:1px solid #777;
+        border-left:1px dashed #777;
         min-height:36px;
         color:#777;
       }
