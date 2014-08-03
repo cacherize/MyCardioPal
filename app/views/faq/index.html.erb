@@ -1,2 +1,21 @@
-<div id="splashDate">Frequently Asked Questions</div>
-<div id="legend"></div>
+<div class="pageHeader">Frequently Asked Questions</div>
+<div id="faqLegend">
+  <ul id="faqIndex">
+    <% @grouped_faqs.each do |group| %>
+      <div class="faqIndexCol">
+        <div class="colWrapper">
+          <% group.each do |faq| %>
+            <li><%= link_to faq.question, anchor: "faq_#{faq.id}" %></li>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <br class="clear"/>
+  </ul>
+</div>
+<dl id="faqList">
+  <% @faqs.each do |faq| %>
+    <dt id="faq_<%= faq.id %>"><span class="faqSymbol">Q</span><%= faq.question %></dt>
+    <dd><span class="faqSymbol">A</span><%= faq.answer %></dd>
+  <% end %>
+</dl>
