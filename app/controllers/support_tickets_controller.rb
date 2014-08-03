@@ -1,4 +1,6 @@
 class SupportTicketsController < ApplicationController
+  skip_filter :authenticate, only: [:new, :create]
+
   def index
   end
 
