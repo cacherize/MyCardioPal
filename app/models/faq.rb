@@ -10,4 +10,8 @@ class Faq < ActiveRecord::Base
       errors.add(:question, "must end in a question mark") unless self.question.last == "?"
     end
   end
+
+  def archived?
+    self.archived_at.present?
+  end
 end

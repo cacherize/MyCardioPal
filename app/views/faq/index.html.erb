@@ -22,8 +22,8 @@
 </div>
 <dl id="faqList">
   <% @faqs.each do |faq| %>
-    <dt id="faq_<%= faq.id %>"><span class="faqSymbol">Q</span><%= faq.question %></dt>
-    <dd><span class="faqSymbol">A</span><%= faq.answer %></dd>
+    <dt id="faq_<%= faq.id %>" class="<%= 'archivedFaq' if faq.archived? %>"><span class="faqSymbol">Q</span><%= faq.question %></dt>
+    <dd class="<%= 'archivedFaq' if faq.archived? %>"><span class="faqSymbol">A</span><%= faq.answer %></dd>
   <% end %>
 </dl>
 <%= link_to 'Top of page', anchor: 'top' %>
