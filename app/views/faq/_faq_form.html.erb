@@ -10,6 +10,6 @@
   </div>
 
   <div class="faqSubmit">
-    <%= f.submit %> or <%= link_to 'Cancel', faq_path(faq), class: 'faqCancelEditLink' %>
+    <%= f.submit "Update FAQ", id: 'faqSubmitBtn' %> or <%= link_to 'Cancel', faq_path(faq), class: 'faqCancelEditLink' %>
   </div>
 <% end %>
