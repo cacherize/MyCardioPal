@@ -66,3 +66,18 @@
   }
   .archivedFaq {opacity:0.3;}
 }
+#editFaq {
+  input[type='text'] {vertical-align: top; padding:6px 4px;}
+  input[type='text'], textarea {width:99%; border:1px solid #ccc;}
+  textarea {height:80px; resize:none; padding:4px;}
+  .faqSubmit {
+    text-align:center;
+    padding:5px 0;
+    input[type='submit'] {
+      background:#ccc;
+      padding:6px 10px;
+      cursor:pointer;
+      border:0;
+    }
+  }
+}
