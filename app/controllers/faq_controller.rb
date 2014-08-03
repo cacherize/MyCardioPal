@@ -47,4 +47,15 @@ class FaqController < ApplicationController
       end
     end
   end
+
+  def update_order
+    params[:position].each do |id, val|
+      f = Faq.find(id)
+      f.update_attribute(:position, val)
+    end
+
+    respond_to do |format|
+      format.html {redirect_to faq_index_path, notice: 'Success! Updated sort order!'}
+    end
+  end
 end
