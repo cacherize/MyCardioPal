@@ -19,6 +19,18 @@ class FaqController < ApplicationController
     end
   end
 
+  def show
+    @faq = Faq.find(params[:id])
+
+    render(partial: 'faq_item', locals: {faq: @faq})
+  end
+
+  def edit
+    @faq = Faq.find(params[:id])
+
+    render(partial: 'faq_form', locals: {faq: @faq})
+  end
+
   def update
     @edit_faq = Faq.find(params[:id])
     
