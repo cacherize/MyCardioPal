@@ -20,5 +20,17 @@ class FaqController < ApplicationController
   end
 
   def update
+    @edit_faq = Faq.find(params[:id])
+    
+    respond_to do |format|
+      if @edit_faq.update_attributes(params[:faq])
+        format.html{redirect_to faq_index_path, notice: "Success! Updated FAQ!"}
+      else
+        @new_faq = Faq.new
+        @faqs = Faq.by_user(current_user)
+        @grouped_faqs = @faqs.in_groups(3, false)
+        format.html{render :index}
+      end
+    end
   end
 end
