@@ -1,0 +1,93 @@
+#faqLegend {
+ border-top:1px dashed #777;
+ border-bottom:1px dashed #777;
+  #faqIndex {
+    padding:0;
+    .faqIndexCol {
+      width:33.3%;
+      float:left;
+      text-align:left;
+      font-size:0.85em;
+      .colWrapper {padding:0 5px 0 15px;}
+      li {margin:5px 0; color:#777;}
+      &:last-of-type {
+        float:right;
+        .colWrapper {padding-right:0;}
+      }
+    }
+  }
+}
+#faqList {
+  text-align:left;
+  padding:0;
+  li {
+    list-style-type:none;
+    margin:18px 0;
+    border:1px solid transparent;
+    .faqQuestion, .faqAnswer {
+      position:relative;
+      padding:4px 0 4px 32px;
+      .faqSymbol {
+        position:absolute;
+        left:0;
+        top:0;
+        font-size:28px;
+        padding:4px;
+        width:24px;
+        color:#777;
+      }
+      .faqContent {
+        margin:0;
+        padding:0 8px;
+        border-left:1px dashed #777;
+        min-height:36px;
+        color:#777;
+      }
+    }
+    .faqQuestion {
+      font-size:28px;
+      margin-bottom:4px;
+      .faqActions {
+        color:#777;
+        font-size:0.45em;
+        display:none;
+        padding:0 0 3px 9px;
+      }
+    }
+    .faqAnswer {margin:0; min-height:36px; padding-top:4px;}
+    &:target {
+      background: #fff194;
+      border-color:#ffe955;
+      .faqQuestion, .faqAnswer {
+        .faqSymbol, .faqContent {color:#444;}
+        .faqContent {border-left-color:#444;}
+      }
+    }
+  }
+  .archivedFaq {opacity:0.3;}
+}
+#editFaq {
+  input[type='text'] {vertical-align: top; padding:6px 4px;}
+  input[type='text'], textarea {width:99%; border:1px solid #ccc;}
+  textarea {height:80px; resize:none; padding:4px;}
+  .faqSubmit {
+    text-align:center;
+    padding:5px 0;
+    input[type='submit'] {
+      background:#ccc;
+      padding:6px 10px;
+      cursor:pointer;
+      border:0;
+      color:#fff;
+    }
+  }
+}
+#faqPositionSubmit {
+  background:#ccc;
+  padding:8px 12px;
+  color:#fff;
+  margin-top:5px;
+  border:0;
+  cursor:pointer;
+  display:none;
+}

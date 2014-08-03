@@ -1,6 +1,6 @@
 <%= form_tag password_resets_path, method: :post, class: 'form' do %>
   <h1 class="formHeader">Reset Password</h1>
-  <div class="formDesc"><span class="desc">Enter your Username or E-Mail and then check your inbox for instructions to reset your password.</span></div>
+  <div class="formDesc"><span class="desc">Enter your Username or E-Mail and then check your inbox for instructions to reset your password.</span></div><br/>
   <div class="formField">
     <%= label_tag :login, "E-Mail/Username" %>
     <div class="fieldWrapper"><%= text_field_tag :login %></div>

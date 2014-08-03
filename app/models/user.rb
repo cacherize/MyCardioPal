@@ -64,6 +64,10 @@ class User < ActiveRecord::Base
   end
 
   #***** User Methods *****#
+  def admin?
+    self.exec
+  end
+  
   def imperial?
     measurement_system == "imperial"
   end

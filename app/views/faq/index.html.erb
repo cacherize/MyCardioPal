@@ -1,0 +1,41 @@
+<div class="pageHeader">Frequently Asked Questions</div>
+<% if current_user && current_user.exec? %>
+  <span class="adminSection">
+    <%= link_to image_tag('icons/add.png')+ ' Add FAQ', '', class: "adminAddLink" %>
+    <%= render 'form' %>
+  </span>
+  <%= javascript_include_tag params[:controller] %>
+<% end %>
+<div id="faqLegend">
+  <ul id="faqIndex">
+    <% @grouped_faqs.each do |group| %>
+      <div class="faqIndexCol">
+        <div class="colWrapper">
+          <% group.each do |faq| %>
+            <li><%= link_to faq.question, anchor: "faq_#{faq.id}" %></li>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <br class="clear"/>
+  </ul>
+</div>
+
+<% if @faqs.present? %>
+  <% if current_user && current_user.admin? %>
+    <%= form_tag update_order_faq_index_path, method: :put do %>
+      <% @faqs.each do |faq| %>
+        <%= hidden_field_tag "position[#{faq.id}]", faq.position, id: "faq_#{faq.id}_position" %>
+      <% end %>
+      <%= submit_tag "Update Sort Order", id: 'faqPositionSubmit' %>
+    <% end %>
+  <% end %>
+  <ul id="faqList">
+    <% @faqs.each do |faq| %>
+      <li id="faq_<%= faq.id %>">
+        <%= render partial: 'faq_item', locals: {faq: faq} %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to 'Top of page', anchor: 'top' %>

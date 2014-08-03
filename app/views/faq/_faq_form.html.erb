@@ -1,0 +1,15 @@
+<%= form_for faq, url: url_for(controller: 'faq', action: 'update'), method: :put, html: {id: 'editFaq'} do |f| %>
+  <div class="faqQuestion<%= ' archivedFaq' if faq.archived? %>">
+    <span class="faqSymbol">Q</span>
+    <p class="faqContent"><%= f.text_field :question, value: faq.question %></p>
+  </div>
+
+  <div class="faqAnswer<%= ' archivedFaq' if faq.archived? %>">
+    <span class="faqSymbol">A</span>
+    <p class="faqContent"><%= f.text_area :answer, value: faq.answer %></p>
+  </div>
+
+  <div class="faqSubmit">
+    <%= f.submit "Update FAQ", id: 'faqSubmitBtn' %> or <%= link_to 'Cancel', faq_path(faq), class: 'faqCancelEditLink' %>
+  </div>
+<% end %>

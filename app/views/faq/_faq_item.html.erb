@@ -1,0 +1,17 @@
+<div class="faqQuestion<%= ' archivedFaq' if faq.archived? %>">
+  <span class="faqSymbol">Q</span>
+  <p class="faqContent"><%= faq.question %></p>
+
+  <% if current_user && current_user.admin? %>
+    <div class="faqActions">
+      <%= link_to 'Edit', edit_faq_path(faq), class: 'faqEditLink' %>
+      &#8226;
+      <%= link_to "#{faq.archived? ? 'Un' : 'A'}rchive", url_for(controller: 'faq', action: 'update', id: faq.id, faq: {archive: faq.archived? ? false : true}), method: :put, confirm: 'Are you sure?' %>
+    </div>
+  <% end %>
+</div>
+
+<div class="faqAnswer<%= ' archivedFaq' if faq.archived? %>">
+  <span class="faqSymbol">A</span>
+  <p class="faqContent"><%= faq.answer %></p>
+</div>

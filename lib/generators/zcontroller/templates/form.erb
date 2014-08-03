@@ -1,0 +1,21 @@
+<%%= form_for @<%= file_name.singularize %>, html: {class: 'form'} do |f| %>
+  <h1 class="formHeader"><%= file_name.gsub("_", " ").titleize %></h1>
+  <div class="formField">
+    <%%= f.label '' %>
+    <div class="fieldWrapper"><%%= f.text_field '' %></div>
+  </div><br/>
+
+  <div class="formField">
+    <%%= f.label '' %>
+    <div class="selectWrapper"><%%= f.select '' %></div>
+  </div><br/>
+
+  <div class="formField">
+    <%%= f.label '' %>
+    <div class="textAreaWrapper"><%%= f.text_area '' %></div>
+  </div><br/>
+
+  <div class="formSubmit">
+    <%%= f.submit %>
+  </div>
+<%% end %>

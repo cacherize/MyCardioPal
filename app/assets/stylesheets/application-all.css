@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require font.css.scss
+ *= require jquery.ui.all
  *= require_self
  *= require_tree ./all
  */
@@ -144,3 +145,20 @@ img {border:0;}
   border-bottom:1px solid #ccc;
   margin:0;
 }
+.pageHeader {
+  margin: 0 0 20px;
+  font-size:30px;
+  font-weight:700;
+  background: #00b4db;
+  padding:15px 0;
+  color:#fff;
+  width:100%;
+  text-shadow:0 -1.5px 0 #007088;
+  -moz-box-shadow:0 0 8px #ccc;
+  -webkit-box-shadow:0 0 8px #ccc;
+  box-shadow:0 0 8px #ccc;
+  text-align:center;
+}
+.adminAddLink {text-align:right; display:block; font-size:14px; height:18px; line-height:18px; margin-bottom:4px;}
+.adminAddLink img {line-height:18px;}
+.clear {clear:both;}

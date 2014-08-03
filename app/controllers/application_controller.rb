@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def redirect_to_under_dev_page
     if Rails.env.production?
-      redirect_to under_development_path unless request.remote_ip == "209.182.121.64"
+      redirect_to under_development_path unless request.remote_ip == "209.182.121.42"
     end
   end
 
