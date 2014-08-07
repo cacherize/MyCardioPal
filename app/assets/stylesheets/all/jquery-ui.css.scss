@@ -3,6 +3,9 @@
   border-radius:0;
   border-color:#ccc;
   color:#222;
+  -moz-box-shadow:0 0 3px #ccc;
+  -webkit-box-shadow:0 0 3px #ccc;
+  box-shadow:0 0 3px #ccc;
   .ui-datepicker-header {
     border-radius:0;
     border:0;
