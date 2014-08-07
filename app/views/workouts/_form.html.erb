@@ -1,4 +1,4 @@
-<%= form_for @workout, html: {class: 'form'} do |f| %>
+<%= form_for @workout, html: {class: 'form', id: 'workoutForm'} do |f| %>
   <h1 class="formHeader"><%= @workout.new_record? ? "Add" : "Edit" %> Workout</h1>
   <% if @workout.errors.any? %>
     <div class="formErrors">
@@ -59,3 +59,4 @@
     <%= f.submit %>
   </div>
 <% end %>
+<%= javascript_include_tag params[:contoller] %>
