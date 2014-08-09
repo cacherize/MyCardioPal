@@ -117,7 +117,7 @@ img {border:0;}
 #logoRightSect {color:#00b4db;}
 #logo:hover #logoLeftSect, #logo:hover #logoMiddleSect {color:#444;}
 #logo:hover #logoRightSect {color:#00c5ef;}
-#body {padding-bottom:80px;}
+#body {padding-bottom:80px; text-align:center;}
 #footer {
   width:100%;
   height:80px;
