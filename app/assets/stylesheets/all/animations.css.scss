@@ -1,0 +1,44 @@
+/* change font size to change size */
+
+.loader {
+  font-size: 10px;
+  width: 40px;
+  height: 10px;
+  position:relative;
+  display:inline-block;
+}
+.dot {
+  font-family:arial, sans-serif;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-iteration-count: infinite;
+}
+.dot1, .dot2 {
+  left: 0;
+}
+.dot3 { left: 10px; }
+.dot4 { left: 20px; }
+
+@keyframes reveal {
+  from { transform: scale(0.001); }
+  to { transform: scale(1); }
+}
+
+@keyframes slide {
+  to { transform: translateX(10px) }
+}
+
+.dot1 {
+  animation-name: reveal;
+}
+.dot2, .dot3 {
+  animation-name: slide;
+}
+.dot4 {
+  animation-name: reveal;
+  animation-direction: reverse; /* thx @HugoGiraudel */
+}
