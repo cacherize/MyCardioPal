@@ -38,6 +38,7 @@ function loadWorkoutForm(){
       $("#workoutDetailFieldsLink").removeClass('activeLink');
     }
   });
+  $("#workout_activity_id").trigger('change')
 
   $("#workoutDetailFieldsLink").click(function(event){
     if (!$(this).hasClass('activeLink')) {
