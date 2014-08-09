@@ -10,6 +10,7 @@
  *
  *= require font.css.scss
  *= require jquery.ui.all
+ *= require chosen
  *= require_self
  *= require_tree ./all
  */

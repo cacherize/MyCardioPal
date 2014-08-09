@@ -14,4 +14,5 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require fittext
+//= require chosen-jquery
 //= require_tree .
