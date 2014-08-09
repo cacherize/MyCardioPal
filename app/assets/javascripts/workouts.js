@@ -34,9 +34,15 @@ function loadWorkoutForm(){
     if ($(this).val() !== "") {
       $("#workoutActivityFields .fieldErrorMsg").hide();
       $("#workoutDetailFieldsLink").addClass('activeLink');
+      $("#fieldPreviewBoxLeft").animate({opacity: 1}, 'slow');
     } else {
       $("#workoutDetailFieldsLink").removeClass('activeLink');
+      $("#fieldPreviewBoxLeft").animate({opacity: 0}, 'fast');
     }
+
+    var activityVal = $("#workout_activity_id_chosen .chosen-single span").text();
+
+    $("#fieldPreviewBoxLeft #previewBoxActivity").text(activityVal);
   });
   $("#workout_activity_id").trigger('change')
 
@@ -47,8 +53,16 @@ function loadWorkoutForm(){
     } else {
       $("#workoutActivityFields").hide();
       $("#workoutDetailFields").fadeIn();
+      $("#activityChangeLink").fadeIn();
     }
 
+    event.preventDefault();
+  });
+
+  $("#activityChangeLink").click(function(event){
+    $(this).hide();
+    $("#workoutDetailFields").hide();
+    $("#workoutActivityFields").fadeIn();
     event.preventDefault();
   });
 }
