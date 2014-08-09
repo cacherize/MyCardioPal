@@ -24,6 +24,7 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails_12factor'
+gem 'chosen-rails'
 
 # unit conversion gem
 gem 'alchemist'
