@@ -16,4 +16,10 @@ function loadWorkoutForm(){
           dp.css('margin-left', offset + 1);
       }
   });
+
+   $(".chosen-select").chosen({
+    allow_single_deselect: true,
+    no_results_text: "Oops, nothing found!",
+    width: '100%'
+  });
 }

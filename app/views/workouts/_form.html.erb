@@ -10,53 +10,64 @@
     </div><br/>
   <% end %>
 
-  <div class="formField">
-    <%= f.label :date, 'Date' %>
-    <div class="fieldWrapper"><%= f.text_field :date, value: date_field_value(@workout, params[:workout]) %></div>
-  </div><br/>
-
-  <div class="formField">
-    <%= f.label :time, 'Time' %>
-    <div class="hoursFieldWrapper">
-      <div class="fieldWrapper"><%= text_field_tag "workout[time][hours]", time_field_value(@workout, params[:workout], :hours), placeholder: '00' %></div> <%= label_tag 'workout[time][hours]', "Hours" %>
-    </div><span class="timeSeparator">:</span><!--
- --><div class="minutesFieldWrapper">
-      <div class="fieldWrapper"><%= text_field_tag "workout[time][minutes]", time_field_value(@workout, params[:workout], :minutes), placeholder: '00' %></div> <%= label_tag 'workout[time][minutes]', "Minutes" %>
-    </div><span class="timeSeparator">:</span><!--
- --><div class="secondsFieldWrapper">
-      <div class="fieldWrapper"><%= text_field_tag "workout[time][seconds]", time_field_value(@workout, params[:workout], :seconds), placeholder: '00' %></div> <%= label_tag 'workout[time][seconds]', "Seconds" %>
+  <% unless @workout.persisted? %>
+    <div id="workoutActivityFields">
+      <div class="formField">
+        <%= f.label :activity_id, 'Select an Activity' %>
+        <%= f.select :activity_id, Activity.all.map{|activity| [activity.name, activity.id]}, {include_blank: true}, {class: 'chosen-select'} %>
+      </div><br/>
     </div>
-  </div><br/>
+  <% end %>
 
-  <div class="formField">
-    <div class="distanceFormField">
-      <%= f.label :distance, "Distance" %>
-      <div class="fieldWrapper"><%= text_field_tag "workout[distance][value]", distance_field_value(@workout, params[:workout]), id: 'workout_distance' %></div>
-    </div>
-    <div class="unitsFormField">
-      <%= label_tag "workout[distance][units]", "Units" %>
-      <div class="selectWrapper"><%= select_tag "workout[distance][units]", options_for_select([["Miles", "mi"], ["Feet", "ft"], ["Kilometers", "km"], ["Meters", "m"]], distance_units_field_value(params[:workout])) %></div>
-    </div>
-  </div><br/>
+  <div id="workoutDetailFields" style="<%= 'display:none;' unless @workout.persisted? %>">
+    <div class="formField">
+      <%= f.label :date, 'Date' %>
+      <div class="fieldWrapper"><%= f.text_field :date, value: date_field_value(@workout, params[:workout]) %></div>
+    </div><br/>
 
-  <div class="formField">
-    <div class="weightsFormField">
-      <%= f.label :weight, "Weight" %>
-      <div class="fieldWrapper"><%= text_field_tag "workout[weight][value]", weight_field_value(@workout, params[:workout]), id: 'workout_weight' %></div>
-    </div>
-    <div class="unitsFormField">
-      <%= label_tag "workout[weight][units]", "Units" %>
-      <div class="selectWrapper"><%= select_tag "workout[weight][units]", options_for_select([["Pounds", "lb"], ["Kilograms", "kg"]], weight_units_field_value(params[:workout])) %></div>
-    </div>
-  </div><br/>
+    <div class="formField">
+      <%= f.label :time, 'Time' %>
+      <div class="hoursFieldWrapper">
+        <div class="fieldWrapper"><%= text_field_tag "workout[time][hours]", time_field_value(@workout, params[:workout], :hours), placeholder: '00' %></div> <%= label_tag 'workout[time][hours]', "Hours" %>
+      </div><span class="timeSeparator">:</span><!--
+   --><div class="minutesFieldWrapper">
+        <div class="fieldWrapper"><%= text_field_tag "workout[time][minutes]", time_field_value(@workout, params[:workout], :minutes), placeholder: '00' %></div> <%= label_tag 'workout[time][minutes]', "Minutes" %>
+      </div><span class="timeSeparator">:</span><!--
+   --><div class="secondsFieldWrapper">
+        <div class="fieldWrapper"><%= text_field_tag "workout[time][seconds]", time_field_value(@workout, params[:workout], :seconds), placeholder: '00' %></div> <%= label_tag 'workout[time][seconds]', "Seconds" %>
+      </div>
+    </div><br/>
 
-  <div class="formField">
-    <%= f.label :note %>
-    <div class="textAreaWrapper"><%= f.text_area :note %></div>
-  </div><br/>
+    <div class="formField">
+      <div class="distanceFormField">
+        <%= f.label :distance, "Distance" %>
+        <div class="fieldWrapper"><%= text_field_tag "workout[distance][value]", distance_field_value(@workout, params[:workout]), id: 'workout_distance' %></div>
+      </div>
+      <div class="unitsFormField">
+        <%= label_tag "workout[distance][units]", "Units" %>
+        <div class="selectWrapper"><%= select_tag "workout[distance][units]", options_for_select([["Miles", "mi"], ["Feet", "ft"], ["Kilometers", "km"], ["Meters", "m"]], distance_units_field_value(params[:workout])) %></div>
+      </div>
+    </div><br/>
 
-  <div class="formSubmit">
-    <%= f.submit %>
+    <div class="formField">
+      <div class="weightsFormField">
+        <%= f.label :weight, "Weight" %>
+        <div class="fieldWrapper"><%= text_field_tag "workout[weight][value]", weight_field_value(@workout, params[:workout]), id: 'workout_weight' %></div>
+      </div>
+      <div class="unitsFormField">
+        <%= label_tag "workout[weight][units]", "Units" %>
+        <div class="selectWrapper"><%= select_tag "workout[weight][units]", options_for_select([["Pounds", "lb"], ["Kilograms", "kg"]], weight_units_field_value(params[:workout])) %></div>
+      </div>
+    </div><br/>
+
+    <div class="formField">
+      <%= f.label :note %>
+      <div class="textAreaWrapper"><%= f.text_area :note %></div>
+    </div><br/>
+
+    <div class="formSubmit">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
 <%= javascript_include_tag params[:contoller] %>

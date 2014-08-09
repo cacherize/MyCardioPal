@@ -1,0 +1,28 @@
+#workout_activity_id_chosen {text-align:left; font-size:16px; font-family:arial;}
+.chosen-container-single {
+  .chosen-single {
+    height:40px;
+    line-height:40px;
+    background:none;
+    border-radius:0;
+    box-shadow:none;
+    border-color:#ccc;
+    div b {background:url("/assets/chosen-sprite.png") no-repeat scroll 0 13px rgba(0, 0, 0, 0);}
+    abbr {top:16px;}
+  }
+  .chosen-search input[type="text"] {border-color:#ccc;}
+  .chosen-drop {border-radius:0;}
+}
+.chosen-container-active .chosen-single {border-color:#ccc;}
+.chosen-container-active.chosen-with-drop .chosen-single {
+  background:none;
+  border-color:#ccc;
+  div b {background-position:-18px 13px;}
+}
+.chosen-container .chosen-drop {
+  border-color:#ccc;
+  .chosen-results {
+    li.active-result {font-size:14px; font-family:arial;}
+    li.highlighted {background:#00b4db; box-shadow:0 0 8px #ccc;}
+  }
+}
