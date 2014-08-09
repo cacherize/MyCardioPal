@@ -2,10 +2,12 @@
 
 .loader {
   font-size: 10px;
-  width: 40px;
+  width: 0;
+  overflow:hidden;
   height: 10px;
   position:relative;
   display:inline-block;
+  vertical-align: middle;
 }
 .dot {
   font-family:arial, sans-serif;

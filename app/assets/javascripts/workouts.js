@@ -22,4 +22,32 @@ function loadWorkoutForm(){
     no_results_text: "Oops, nothing found!",
     width: '100%'
   });
+
+  $("#workoutActivityFields").on('mouseover', '.activeLink',function(){
+    $(".loader").stop().animate({width: '40px'})
+  });
+  $("#workoutActivityFields").on('mouseout', '.activeLink',function(){
+    $(".loader").stop().animate({width: 0})
+  });
+
+  $("#workout_activity_id").change(function(){
+    if ($(this).val() !== "") {
+      $("#workoutActivityFields .fieldErrorMsg").hide();
+      $("#workoutDetailFieldsLink").addClass('activeLink');
+    } else {
+      $("#workoutDetailFieldsLink").removeClass('activeLink');
+    }
+  });
+
+  $("#workoutDetailFieldsLink").click(function(event){
+    if (!$(this).hasClass('activeLink')) {
+       $("#workout_activity_id_chosen").effect("highlight", {color: '#fdd'}, 3000);
+       $("#workoutActivityFields .fieldErrorMsg").show();
+    } else {
+      $("#workoutActivityFields").hide();
+      $("#workoutDetailFields").fadeIn();
+    }
+
+    event.preventDefault();
+  });
 }

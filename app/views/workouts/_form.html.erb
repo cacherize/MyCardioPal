@@ -10,16 +10,19 @@
     </div><br/>
   <% end %>
 
-  <% unless @workout.persisted? %>
+  <% if params[:action] == "new" %>
     <div id="workoutActivityFields">
       <div class="formField">
         <%= f.label :activity_id, 'Select an Activity' %>
         <%= f.select :activity_id, Activity.all.map{|activity| [activity.name, activity.id]}, {include_blank: true}, {class: 'chosen-select'} %>
+        <p class="fieldErrorMsg">You must select an activity.</p>
       </div><br/>
+
+      <%= link_to "Continue #{loader_anim}".html_safe, '', id: 'workoutDetailFieldsLink' %>
     </div>
   <% end %>
 
-  <div id="workoutDetailFields" style="<%= 'display:none;' unless @workout.persisted? %>">
+  <div id="workoutDetailFields" style="<%= 'display:none;' if params[:action] == "new" %>">
     <div class="formField">
       <%= f.label :date, 'Date' %>
       <div class="fieldWrapper"><%= f.text_field :date, value: date_field_value(@workout, params[:workout]) %></div>
