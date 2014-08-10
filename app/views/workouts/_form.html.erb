@@ -4,7 +4,7 @@
 </div>
 <div id="fieldPreviewBoxRight">
   <p class="previewBoxTitle">Calories Burned<span>estimate</span></p>
-  <p id="previewBoxCalorie">1190</p>
+  <p id="previewBoxCalorie"></p>
 </div>
 <%= form_for @workout, html: {class: 'form', id: 'workoutForm'} do |f| %>
   <h1 class="formHeader"><%= @workout.new_record? ? "Add" : "Edit" %> Workout</h1>
