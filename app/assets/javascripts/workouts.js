@@ -56,6 +56,7 @@ function loadWorkoutForm(){
       $("#workoutActivityFields").hide();
       $("#workoutDetailFields").fadeIn();
       $("#activityChangeLink").fadeIn();
+      $("#metValue").trigger('change');
       
       var id = $("#workout_activity_id").val(),
           activityUrl = '/activities/'+id+'/met';

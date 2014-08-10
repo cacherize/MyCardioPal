@@ -31,7 +31,7 @@
   <% else %>
     <%= f.hidden_field :activity_id, value: @workout.activity_id %>
   <% end %>
-  <%= hidden_field_tag :met, @workout.activity.present? ? @workout.activity.met : 0, id: 'metValue' %>
+  <%= hidden_field_tag :met, @workout.activity.present? ? @workout.activity.met : 0, id: 'metValue', class: 'calorieCountField' %>
 
   <div id="workoutDetailFields" style="<%= 'display:none;' if params[:action] == "new" %>">
     <div class="formField">
@@ -42,13 +42,13 @@
     <div class="formField">
       <%= f.label :time, 'Time' %>
       <div class="hoursFieldWrapper">
-        <div class="fieldWrapper"><%= text_field_tag "workout[time][hours]", time_field_value(@workout, params[:workout], :hours), placeholder: '00' %></div> <%= label_tag 'workout[time][hours]', "Hours" %>
+        <div class="fieldWrapper"><%= text_field_tag "workout[time][hours]", time_field_value(@workout, params[:workout], :hours), placeholder: '00', class: 'calorieCountField'%></div> <%= label_tag 'workout[time][hours]', "Hours" %>
       </div><span class="timeSeparator">:</span><!--
    --><div class="minutesFieldWrapper">
-        <div class="fieldWrapper"><%= text_field_tag "workout[time][minutes]", time_field_value(@workout, params[:workout], :minutes), placeholder: '00' %></div> <%= label_tag 'workout[time][minutes]', "Minutes" %>
+        <div class="fieldWrapper"><%= text_field_tag "workout[time][minutes]", time_field_value(@workout, params[:workout], :minutes), placeholder: '00', class: 'calorieCountField' %></div> <%= label_tag 'workout[time][minutes]', "Minutes" %>
       </div><span class="timeSeparator">:</span><!--
    --><div class="secondsFieldWrapper">
-        <div class="fieldWrapper"><%= text_field_tag "workout[time][seconds]", time_field_value(@workout, params[:workout], :seconds), placeholder: '00' %></div> <%= label_tag 'workout[time][seconds]', "Seconds" %>
+        <div class="fieldWrapper"><%= text_field_tag "workout[time][seconds]", time_field_value(@workout, params[:workout], :seconds), placeholder: '00', class: 'calorieCountField' %></div> <%= label_tag 'workout[time][seconds]', "Seconds" %>
       </div>
     </div><br/>
 
@@ -66,11 +66,15 @@
     <div class="formField">
       <div class="weightsFormField">
         <%= f.label :weight, "Weight" %>
-        <div class="fieldWrapper"><%= text_field_tag "workout[weight][value]", weight_field_value(@workout, params[:workout]), id: 'workout_weight' %></div>
+        <div class="fieldWrapper">
+          <%= text_field_tag "workout[weight][value]", weight_field_value(@workout, params[:workout]), id: 'workout_weight', class: 'calorieCountField' %>
+        </div>
       </div>
       <div class="unitsFormField">
         <%= label_tag "workout[weight][units]", "Units" %>
-        <div class="selectWrapper"><%= select_tag "workout[weight][units]", options_for_select([["Pounds", "lb"], ["Kilograms", "kg"]], weight_units_field_value(params[:workout])) %></div>
+        <div class="selectWrapper">
+          <%= select_tag "workout[weight][units]", options_for_select([["Pounds", "lb"], ["Kilograms", "kg"]], weight_units_field_value(params[:workout])), class: 'calorieCountField' %>
+        </div>
       </div>
     </div><br/>
 
