@@ -30,4 +30,9 @@ class ActivitiesController < ApplicationController
       end
     end
   end
+
+  def met
+    @activity = Activity.find(params[:id])
+    render json: @activity.met
+  end
 end

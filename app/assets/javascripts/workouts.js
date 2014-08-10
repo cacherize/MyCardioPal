@@ -56,6 +56,12 @@ function loadWorkoutForm(){
       $("#workoutActivityFields").hide();
       $("#workoutDetailFields").fadeIn();
       $("#activityChangeLink").fadeIn();
+      
+      var id = $("#workout_activity_id").val(),
+          activityUrl = '/activities/'+id+'/met';
+      $.get(activityUrl, function(data){
+        $("#metValue").val(data);
+      });
     }
 
     event.preventDefault();
