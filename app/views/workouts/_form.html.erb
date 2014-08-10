@@ -28,6 +28,8 @@
 
       <%= link_to "Continue #{loader_anim}".html_safe, '', id: 'workoutDetailFieldsLink' %>
     </div>
+  <% else %>
+    <%= f.hidden_field :activity_id, value: @workout.activity_id %>
   <% end %>
   <%= hidden_field_tag :met, @workout.activity.present? ? @workout.activity.met : 0, id: 'metValue' %>
 
