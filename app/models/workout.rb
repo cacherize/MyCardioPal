@@ -4,6 +4,8 @@ class Workout < ActiveRecord::Base
   include UnitConversions
 
   belongs_to :user
+  belongs_to :activity
+
 
   #***** Validations *****#
   validates_presence_of [:date, :time, :weight], message: 'is required'
