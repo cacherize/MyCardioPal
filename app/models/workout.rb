@@ -12,9 +12,14 @@ class Workout < ActiveRecord::Base
   validates :time, numericality: {greater_than: 59, message: 'must be at least 1 minute'}, if: lambda{self.time.present?}
   validates :weight, numericality: {greater_than: 21, message: "doesn't meet minimum allowed value (10kg or 22lb)"}, if: lambda{self.weight.present?}
   validate :date_class, if: lambda{self.date.present?}
+  validate :readonly_attributes, if: lambda{self.persisted?}
 
   def date_class
     errors.add(:date, 'must be a valid format (ex: mm-dd-yyyy or mm/dd/yyyy)') unless self.date.is_a? Date
+  end
+
+  def readonly_attributes
+    errors.add(:base, 'You cannot change readonly attributes') if (self.activity_id_changed? || self.id_changed?)
   end
 
   #***** Setter & Getter Methods *****#
