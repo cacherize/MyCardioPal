@@ -29,6 +29,7 @@
       <%= link_to "Continue #{loader_anim}".html_safe, '', id: 'workoutDetailFieldsLink' %>
     </div>
   <% end %>
+  <%= hidden_field_tag :met, @workout.activity.present? ? @workout.activity.met : 0, id: 'metValue' %>
 
   <div id="workoutDetailFields" style="<%= 'display:none;' if params[:action] == "new" %>">
     <div class="formField">
