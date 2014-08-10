@@ -8,7 +8,11 @@ MyCardioPal::Application.routes.draw do
   resources :support_tickets, only: [:index, :new, :create]
   get 'add_workout', to: 'workouts#new'
   resources :workouts
-  resources :activities
+  resources :activities do
+    member do
+      get 'met'
+    end
+  end
   match 'reset_password', to: 'password_resets#new', via: :get
   match 'reset_password/:id/edit', to: 'password_resets#edit', via: :get, as: 'edit_password'
   resources :password_resets, only: [:new, :create, :edit, :update]
