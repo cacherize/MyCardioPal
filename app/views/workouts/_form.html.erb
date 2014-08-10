@@ -1,5 +1,5 @@
 <div id="fieldPreviewBoxLeft">
-  <p class="previewBoxTitle">Activity<span><%= link_to 'Change', '', id: 'activityChangeLink' %></span></p>
+  <p class="previewBoxTitle">Activity<span><%= link_to('Change', '', id: 'activityChangeLink') if @workout.new_record? %></span></p>
   <p id="previewBoxActivity"><%= @workout.activity.present? ? @workout.activity.name : nil %></p>
 </div>
 <div id="fieldPreviewBoxRight">
