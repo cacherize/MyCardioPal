@@ -81,10 +81,11 @@ function loadWorkoutForm(){
     var weightValue = $("#workout_weight").val(),
         weightUnits = $("#workout_weight_units").val(),
         metValue = $("#metValue").val(),
-        timeHours = ($("#workout_time_hours").val() || 0) * 3600,
-        timeMinutes = ($("#workout_time_minutes").val() || 0) * 60,
-        timeSeconds = $("#workout_time_seconds").val() || 0,
-        totalSeconds = timeHours + timeMinutes + timeSeconds;
+        totalSeconds = 0;
+
+        totalSeconds += parseFloat(($("#workout_time_hours").val() || 0) * 3600)
+        totalSeconds += parseFloat(($("#workout_time_minutes").val() || 0) * 60)
+        totalSeconds += parseFloat($("#workout_time_seconds").val() || 0)
 
     if (weightValue.length && weightUnits.length && (metValue > 0) && (totalSeconds > 0)) {
       var calories = Math.round(calculateBurnedCalories(weightValue, weightUnits, metValue, totalSeconds));
