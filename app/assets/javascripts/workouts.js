@@ -40,9 +40,11 @@ function loadWorkoutForm(){
       $("#fieldPreviewBoxLeft").animate({opacity: 0}, 'fast');
     }
 
-    var activityVal = $("#workout_activity_id_chosen .chosen-single span").text();
+    if ($("#workoutActivityFields").is(":visible")) {
+      var activityVal = $("#workout_activity_id_chosen .chosen-single span").text();
 
-    $("#fieldPreviewBoxLeft #previewBoxActivity").text(activityVal);
+      $("#fieldPreviewBoxLeft #previewBoxActivity").text(activityVal);
+    }
   });
   $("#workout_activity_id").trigger('change')
 

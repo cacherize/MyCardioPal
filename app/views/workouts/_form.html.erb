@@ -1,6 +1,6 @@
 <div id="fieldPreviewBoxLeft">
   <p class="previewBoxTitle">Activity<span><%= link_to 'Change', '', id: 'activityChangeLink' %></span></p>
-  <p id="previewBoxActivity">Biking</p>
+  <p id="previewBoxActivity"><%= @workout.activity.present? ? @workout.activity.name : nil %></p>
 </div>
 <div id="fieldPreviewBoxRight">
   <p class="previewBoxTitle">Calories Burned<span>estimate</span></p>
