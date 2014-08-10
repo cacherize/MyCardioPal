@@ -93,6 +93,7 @@ function loadWorkoutForm(){
       $("#fieldPreviewBoxRight").animate({opacity: 0}, 'fast');
     }
   });
+  $(".calorieCountField:first").trigger('change');
 }
 
 function calculateBurnedCalories(weightValue, weightUnits, metValue, seconds) {
