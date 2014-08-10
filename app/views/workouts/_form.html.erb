@@ -18,8 +18,8 @@
     </div><br/>
   <% end %>
 
-  <% if params[:action] == "new" %>
-    <div id="workoutActivityFields">
+  <% if params[:action] == "new" || params[:action] == "create" %>
+    <div id="workoutActivityFields" style="<%= 'display:none;' if params[:action] == "create" %>">
       <div class="formField">
         <%= f.label :activity_id, 'Select an Activity' %>
         <%= f.select :activity_id, Activity.all.map{|activity| [activity.name, activity.id]}, {include_blank: true}, {class: 'chosen-select'} %>

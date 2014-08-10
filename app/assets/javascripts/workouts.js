@@ -44,6 +44,8 @@ function loadWorkoutForm(){
       var activityVal = $("#workout_activity_id_chosen .chosen-single span").text();
 
       $("#fieldPreviewBoxLeft #previewBoxActivity").text(activityVal);
+    } else if ($("#workoutDetailFields").is(":visible")) {
+      $("#activityChangeLink").fadeIn();
     }
   });
   $("#workout_activity_id").trigger('change');
