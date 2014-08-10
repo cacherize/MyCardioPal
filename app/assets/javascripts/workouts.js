@@ -46,7 +46,7 @@ function loadWorkoutForm(){
       $("#fieldPreviewBoxLeft #previewBoxActivity").text(activityVal);
     }
   });
-  $("#workout_activity_id").trigger('change')
+  $("#workout_activity_id").trigger('change');
 
   $("#workoutDetailFieldsLink").click(function(event){
     if (!$(this).hasClass('activeLink')) {
@@ -56,7 +56,7 @@ function loadWorkoutForm(){
       $("#workoutActivityFields").hide();
       $("#workoutDetailFields").fadeIn();
       $("#activityChangeLink").fadeIn();
-      $("#metValue").trigger('change');
+      $(".calorieCountField:first").trigger('change');
       
       var id = $("#workout_activity_id").val(),
           activityUrl = '/activities/'+id+'/met';
@@ -74,4 +74,33 @@ function loadWorkoutForm(){
     $("#workoutActivityFields").fadeIn();
     event.preventDefault();
   });
+
+  $(".calorieCountField").change(function(){
+    var weightValue = $("#workout_weight").val(),
+        weightUnits = $("#workout_weight_units").val(),
+        metValue = $("#metValue").val(),
+        timeHours = ($("#workout_time_hours").val() || 0) * 3600,
+        timeMinutes = ($("#workout_time_minutes").val() || 0) * 60,
+        timeSeconds = $("#workout_time_seconds").val() || 0,
+        totalSeconds = timeHours + timeMinutes + timeSeconds;
+
+    if (weightValue.length && weightUnits.length && (metValue > 0) && (totalSeconds > 0)) {
+      var calories = Math.round(calculateBurnedCalories(weightValue, weightUnits, metValue, totalSeconds));
+      $("#previewBoxCalorie").text(calories)
+      $("#fieldPreviewBoxRight").animate({opacity: 1}, 'slow');
+    } else {
+      $("#previewBoxCalorie").val('Fill Out Fields');
+      $("#fieldPreviewBoxRight").animate({opacity: 0}, 'fast');
+    }
+  });
+}
+
+function calculateBurnedCalories(weightValue, weightUnits, metValue, seconds) {
+  if (weightUnits == "lb") {
+    weightValue = weightValue / 2.2046
+  }
+  hours = seconds / 3600
+  total = (weightValue * metValue) * hours
+
+  return total;
 }
