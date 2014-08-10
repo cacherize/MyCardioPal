@@ -22,7 +22,6 @@ group :assets do
 end
 
 gem 'jquery-rails'
-gem 'jquery-ui-rails', '~> 4.1.2'
 gem 'rails_12factor'
 gem 'chosen-rails'
 
