@@ -12,8 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.ui.datepicker
-//= require jquery.ui.effect-highlight
+//= require jquery-ui.min
 //= require fittext
 //= require chosen-jquery
 //= require_tree .
