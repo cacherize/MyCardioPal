@@ -34,4 +34,16 @@ class WorkoutsController < ApplicationController
   def show
     @workout = Workout.find(params[:id])
   end
+
+  def destroy
+    @workout = Workout.find(params[:id])
+
+    respond_to do |format|
+      if @workout.destroy
+        format.html{redirect_to(current_user, notice: "Success! Deleted workout!")}
+      else
+        format.html{redirect_to workout_edit_path(@workout), alert: 'An error occurred, please try again.'}
+      end
+    end
+  end
 end

@@ -8,6 +8,7 @@
 </div>
 <%= form_for @workout, html: {class: 'form', id: 'workoutForm'} do |f| %>
   <h1 class="formHeader"><%= @workout.new_record? ? "Add" : "Edit" %> Workout</h1>
+  <%= link_to("Delete Workout", workout_path, method: :delete, id: 'deleteWorkoutLink', confirm: 'Are you sure you want to delete this workout?') if @workout.persisted? %>
   <% if @workout.errors.any? %>
     <div class="formErrors">
       <ul class="errorList">Form Errors:
